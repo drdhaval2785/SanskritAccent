@@ -39,15 +39,49 @@ echo "Input word is - ".$first;
 $text = array($first);
 $storedata=array();
 
-/* phiSo'nta udAttaH (F.1.1) */
-foreach ($text as $value)
+
+/* pATalApAlaGkAmbAsAgarArthAnAm (1.2) */
+if (sub(array("pAwalA","surUpA","pAkalA","apAlaNka","Arevata","AragvaDa","mAtA","sAraga","samudra"),blank(0),blank(0),0))
 {
-	$val[] = preg_replace('/([aAiIuUeEoO])([^aAiIuUeEoO]*)$/','$1^$2',$value);
+	$text = antodAtta();
+	storedata('PiwsUtra-1.2','sa',0);
 }
-$text = $val; $val=array();
-storedata('f.1.1','sa',0);
+/* gehArthAnAmastriyAm (1.3) */
+// enumeration of other members pending.
+elseif (sub(array("geha","gfha"),blank(0),blank(0),0))
+{
+	$text = antodAtta();
+	storedata('PiwsUtra-1.3','sa',0);
+}
+/* gehArthAnAmastriyAm (1.3) */
+// astriyAm iti jJApakAt
+elseif (sub(array("SAlA"),blank(0),blank(0),0))
+{
+	$text = AdyudAtta();
+	storedata('PiwsUtra-1.3','sa',0);
+}
+/* gudasya ca (1.4) */
+elseif (sub(array("guda"),blank(0),blank(0),0))
+{
+	$text = antodAtta();
+	storedata('PiwsUtra-1.4','sa',0);
+}
+/* dhyapUrvasya strIviSayasya (1.5) */
+elseif (arr($text,'/[Dy][A]/'))
+{
+	$text = antodAtta();
+	storedata('PiwsUtra-1.5','sa',0);
+}
+/* phiSo'nta udAttaH (1.1) */
+else
+{
+	$text = antodAtta();
+	storedata('PiwsUtra-1.1','sa',0);	
+}
+
+
 /* Displaying the sUtras and sequential changes */
-display_from_storedata();
+display_phiT();
 
 /* End of Code */
 ?>
