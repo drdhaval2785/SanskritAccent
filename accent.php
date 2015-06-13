@@ -146,6 +146,43 @@ elseif (ends($text,array("pfzWa"),1) && $veda==="0")
 	$text = AdyantodAttavA(0);
 	storedata('Pi-15','sa',0);
 }
+/* arjunasya tRNAkhyA cet (16) */
+elseif ($_GET['phit']==='3.1')
+{
+	$text = antodAtta(0);
+	storedata('Pi-16','sa',0);
+}
+/* Aryasya svAmyAkhyA cet (17) */
+elseif ($_GET['phit']==='4.1')
+{
+	$text = antodAtta(0);
+	storedata('Pi-17','sa',0);
+}
+/* AzAyA adigAkyA cet (18) */
+elseif ($_GET['phit']==='5.2')
+{
+	$text = antodAtta(0);
+	storedata('Pi-18','sa',0);
+}
+/* AzAyA adigAkyA cet (18) */
+elseif ($_GET['phit']==='5.1')
+{
+	$text = AdyudAtta(0);
+	storedata('Pi-18','sa',0);
+}
+/* nakSatrANAmabviSayANAm (19) */
+elseif (ends($text,array("jyezWA","SravizWA","DanizWA","ASleSA","anurADA"),1))
+{
+	$text = AntodAtta(0);
+	storedata('Pi-19','sa',0);
+}
+/* na kupUrvasya kRttikAkhyA cet (20) */
+// Pending. Understand it first.
+elseif (ends($text,array("AryikA","bahulikA"),1))
+{
+	$text = AdyudAtta(0);
+	storedata('Pi-20','sa',0);
+}
 /* phiSo'nta udAttaH (1) */
 else
 {

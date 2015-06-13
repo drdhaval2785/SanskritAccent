@@ -68,6 +68,27 @@ if(ends($arrWord,array("kfzRa"),1))
 	$html .= '<input required type="radio" value="2.3" name="phit" > अन्य ';
 	$html .= '</div>';
 }
+if(ends($arrWord,array("arjuna"),1))
+{		
+	$html .= '<div id="step11">';
+	$html .= '<input required type="radio" value="3.1" name="phit" > तृणाख्या ';
+	$html .= '<input required type="radio" value="3.2" name="phit" > अन्य ';
+	$html .= '</div>';
+}
+if(ends($arrWord,array("Arya"),1))
+{		
+	$html .= '<div id="step11">';
+	$html .= '<input required type="radio" value="4.1" name="phit" > स्वाम्याख्या ';
+	$html .= '<input required type="radio" value="4.2" name="phit" > अन्य ';
+	$html .= '</div>';
+}
+if(ends($arrWord,array("ASA"),1))
+{		
+	$html .= '<div id="step11">';
+	$html .= '<input required type="radio" value="5.1" name="phit" > दिगाख्या ';
+	$html .= '<input required type="radio" value="5.2" name="phit" > अदिगाख्या ';
+	$html .= '</div>';
+}
 	
 
 
