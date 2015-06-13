@@ -57,8 +57,7 @@ if(ends($arrWord,array("dakziRa"),1))
 	$html .= '<div id="step11">';
 	$html .= '<input required type="radio" value="1.1" name="phit" > साधुत्ववाचि ';
 	$html .= '<input required type="radio" value="1.2" name="phit" > स्वाङ्गवाचि ';
-	$html .= '<input required type="radio" value="1.3" name="phit" > छन्दसि ';
-	$html .= '<input required type="radio" value="1.4" name="phit" > अन्य ';
+	$html .= '<input required type="radio" value="1.3" name="phit" > अन्य ';
 	$html .= '</div>';
 }
 if(ends($arrWord,array("kfzRa"),1))

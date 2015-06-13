@@ -32,6 +32,7 @@ $us = "";
 /* Reading from the HTML input. */
 $first = toslp($_GET["first"]); // to change the word input in devanagari / IAST to slp.
 $frontend = $_GET["frontend"];
+$veda = $_GET["veda"];
 global $storedata;
 
 echo $header;
@@ -97,15 +98,58 @@ elseif ($_GET['phit']==='1.2')
 	storedata('Pi-9','sa',0);
 }
 /* chandasi ca (10) */
-elseif ($_GET['phit']==='1.3')
+elseif ($veda==="1" && ends($text,array("dakziRa"),1) )
 {
 	$text = AdyantodAttavA(0);
 	storedata('Pi-10','sa',0);
 }
+/* kRSNasyAjmRgAkhyA cet (11) */
+elseif ($_GET['phit']==='2.3')
+{
+	$text = antodAtta(0);
+	storedata('Pi-11','sa',0);
+}
+/* vA nAmadheyasya (12) */
+elseif ($_GET['phit']==='2.2')
+{
+	$text = AdyantodAttavA(0);
+	storedata('Pi-12','sa',0);
+}
+/* zuklagaurayorAdiH (13) */
+elseif (ends($text,array("Sukla","gOra"),1))
+{
+	$text = AdyantodAttavA(0);
+	storedata('Pi-13','sa',0);
+}
+/* aGguSThodakabakavazAnAM chandasyantaH (14) */
+elseif (ends($text,array("aNguzWa","udaka","baka","vaSA"),1) && $veda==="1")
+{
+	$text = antodAtta(0);
+	storedata('Pi-14','sa',0);
+}
+/* aGguSThodakabakavazAnAM chandasyantaH (14) */
+elseif (ends($text,array("vaSA"),1) && $veda==="0")
+{
+	$text = AdyudAtta(0);
+	storedata('Pi-14','sa',0);
+}
+/* pRSThasya ca (15) */
+elseif (ends($text,array("pfzWa"),1) && $veda==="1")
+{
+	$text = antodAtta(0);
+	storedata('Pi-15','sa',0);
+}
+/* pRSThasya ca (15) */
+// Pending to verify the implication.
+elseif (ends($text,array("pfzWa"),1) && $veda==="0")
+{
+	$text = AdyantodAttavA(0);
+	storedata('Pi-15','sa',0);
+}
 /* phiSo'nta udAttaH (1) */
 else
 {
-	$text = antodAtta();
+	$text = antodAtta(0);
 	storedata('Pi-1','sa',0);	
 }
 
