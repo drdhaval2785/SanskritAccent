@@ -3169,6 +3169,7 @@ function display_phiT()
 		gui3($value[0],$value[1],$value[2],$value[3]);
 	}
 }
+
 /* Function gui to overcome issues pointed out in https://github.com/drdhaval2785/SanskritVerb/issues/125 */
 // matches function makes the code fast. Earlier we were using a for loop over vdata / ASdata which was very costly. matches function is derived from the answer of Aleks G from http://stackoverflow.com/questions/12315536/search-for-php-array-element-containing-string
 function gui($text,$sutra_number,$style,$note)

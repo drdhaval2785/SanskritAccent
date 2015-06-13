@@ -33,6 +33,7 @@ $us = "";
 $first = toslp($_GET["first"]); // to change the word input in devanagari / IAST to slp.
 $frontend = $_GET["frontend"];
 $veda = $_GET["veda"];
+$gender = $_GET["gender"];
 global $storedata;
 
 echo $header;
@@ -40,9 +41,31 @@ echo "Input word is - ".$first;
 $text = array($first);
 $storedata=array();
 
-
+/* athAdiH prAk zakaTeH (24) */
+// This is adhikArasUtra. It is implicitly coded in each code fragment from 25 to 69.
+/* hrasvAntasya strIvizayasya (25) */
+if (arr($text,'/[iu]$/') && $gender==='f')
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyudAtta(0);
+	storedata('Pi-25','sa',0);
+}
+/* tRNadhAnyAnAM ca dvyaSAm (27) */
+elseif (ends($text,array("kASa","kuSa","kunda","mAza","tila","mudga","kASA","kuSA","kundA","mAzA","tilA","mudgA",),2))
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyudAtta(0);
+	storedata('Pi-27','sa',0);
+}
+/* nabviSayasyAnisantasya (26) */
+elseif (!arr($text,'/is$/') && $gender==='n')
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyudAtta(0);
+	storedata('Pi-26','sa',0);
+}
 /* pATalApAlaGkAmbAsAgarArthAnAm (2) */
-if (ends($text,array("pAwalA","surUpA","pAkalA","apAlaNka","Arevata","AragvaDa","mAtA","sAraga","samudra"),1))
+elseif (ends($text,array("pAwalA","surUpA","pAkalA","apAlaNka","Arevata","AragvaDa","mAtA","sAraga","samudra"),1))
 {
 	$text = antodAtta(0);
 	storedata('Pi-2','sa',0);
