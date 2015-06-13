@@ -89,6 +89,13 @@ if(ends($arrWord,array("ASA"),1))
 	$html .= '<input required type="radio" value="5.2" name="phit" > अदिगाख्या ';
 	$html .= '</div>';
 }
+if(ends($arrWord,array("jyezWa","kanizWa"),1))
+{		
+	$html .= '<div id="step11">';
+	$html .= '<input required type="radio" value="6.1" name="phit" > वयसि ';
+	$html .= '<input required type="radio" value="6.2" name="phit" > अन्य ';
+	$html .= '</div>';
+}
 	
 
 

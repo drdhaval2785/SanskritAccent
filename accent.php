@@ -8,7 +8,7 @@ include "slp-dev.php"; // includes code for conversion from SLP to devanagari,
 include "dev-slp.php"; // includes code for devanagari to SLP.
 
 /* hides error reports. */
-//error_reporting(0);
+error_reporting(0);
 
 /* set execution time to an hour */
 ini_set('max_execution_time', 36000);
@@ -177,11 +177,29 @@ elseif (ends($text,array("jyezWA","SravizWA","DanizWA","ASleSA","anurADA"),1))
 	storedata('Pi-19','sa',0);
 }
 /* na kupUrvasya kRttikAkhyA cet (20) */
-// Pending. Understand it first.
-elseif (ends($text,array("AryikA","bahulikA"),1))
+elseif (ends($text,array("kfttikA","AryikA","bahulikA"),1))
 {
 	$text = AdyudAtta(0);
 	storedata('Pi-20','sa',0);
+}
+/* ghRtAdInAM ca (21) */
+// List from phiTvRtti.
+elseif (ends($text,array("Gfta","rajata","Sveta","sapta","azwO","jAtarUpa"),1))
+{
+	$text = antodAtta(0);
+	storedata('Pi-21','sa',0);
+}
+/* jyeSThakaniSThayorvayasi (22) */
+elseif ($_GET['phit']==='6.1')
+{
+	$text = antodAtta(0);
+	storedata('Pi-22','sa',0);
+}
+/* bilvatizyayoH svarito vA (23) */
+elseif (ends($text,array("bilva","tizya"),1))
+{
+	$text = antasvaritodAttavA(0);
+	storedata('Pi-22','sa',0);
 }
 /* phiSo'nta udAttaH (1) */
 else

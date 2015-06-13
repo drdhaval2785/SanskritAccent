@@ -3517,6 +3517,24 @@ function AdyantAnudAttavA($n)
 	}
 	return $text;
 }
+function antasvaritodAttavA($n)
+{
+	global $text;
+	foreach ($text as $value)
+	{
+		$val[] = preg_replace('/([aAiIuUeEoO])([^aAiIuUeEoO]*)$/','$1$2^',$value);
+		$val[] = preg_replace('/([aAiIuUeEoO])([^aAiIuUeEoO]*)$/','$1$2#',$value);
+	}
+	if ($n===0)
+	{
+		$text = $val;		
+	}
+	elseif($n===1)
+	{
+		$text = array_merge($text,$val);
+	}
+	return $text;
+}
 
 
 /* Functions which are not used in the code */
