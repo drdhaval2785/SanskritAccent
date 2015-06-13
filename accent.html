@@ -17,11 +17,14 @@
 <form action="accent.php" method = "get" id="frm">
 <!--... first is the input word, which the user enters. -->
 प्रकृतिः : <input type="text" name="first" required id="first" autofocus="autofocus" >   <font color="red" size="2">Mandatory field.</font><br>
-
 <!--... Defining transliteration of the word. Default is kept as Devanagari. User may change it according to his wish. -->
 <input type="radio" name="tran" value="Devanagari">Devanagari
 <input type="radio" name="tran" value="IAST">IAST
 <input type="radio" name="tran" value="SLP1" checked>SLP1
+<br>
+
+<!--... Defining transliteration of the word. Default is kept as Devanagari. User may change it according to his wish. -->
+<input type="radio" name="vAcya" value="kartR">Click for ajax
 <br>
 <input type="hidden" name="sanAdi" value="" checked>
 <input type="hidden" name="frontend" value="1" checked>
