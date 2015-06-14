@@ -96,6 +96,13 @@ if(ends($arrWord,array("jyezWa","kanizWa"),1))
 	$html .= '<input required type="radio" value="6.2" name="phit" > अन्य ';
 	$html .= '</div>';
 }
+if(arr($arrWord,'/[uU][KPCWTcwtkp]/') )
+{		
+	$html .= '<div id="step11">';
+	$html .= '<input required type="radio" value="7.1" name="phit" > कृत्रिमाख्या ';
+	$html .= '<input required type="radio" value="7.2" name="phit" > अन्य ';
+	$html .= '</div>';
+}
 	
 
 

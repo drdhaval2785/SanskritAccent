@@ -766,12 +766,12 @@ function display2($text,$n)
         if ($upasarga_joined===1 || $us==="")
         {
 //        echo "<p class = form>$i - ".convert($text[$i-1])."</p>\n"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
-        echo "<p class = form>$i - ".$text[$i-1]."</p>\n"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
+        echo "<p class = form>$i - ".convert_accent($text[$i-1])."</p>\n"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
         }
         elseif ($upasarga_joined===0)
         {
 //        echo "<p class = form>$i - ".convert($us."+".$text[$i-1])."</p>\n"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
-        echo "<p class = form>$i - ".$us."+".$text[$i-1]."</p>\n"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
+        echo "<p class = form>$i - ".convert_accent($us)."+".convert_accent($text[$i-1])."</p>\n"; // showing the output to the browser. e.g. 1. rAmaH. $i is for numbering. function convert converts the output into devanAgarI.
         }
     }
     if ($n === 2) { $text1 = $text; $text = $text2; } // not useful because the display(2) is not used in the code. If it is used, this will work.
@@ -3536,6 +3536,31 @@ function antasvaritodAttavA($n)
 	}
 	return $text;
 }
+function preg_accent($regex,$rep,$n)
+{
+	global $text;
+	foreach ($text as $value)
+	{
+		$val[] = preg_replace($regex,$rep,$value);
+	}
+	if ($n===0)
+	{
+		$text = $val;		
+	}
+	elseif($n===1)
+	{
+		$text = array_merge($text,$val);
+	}
+	return $text;
+}
+/* convert_accent */
+function convert_accent($text)
+{
+	$text = str_replace(array("^","_","#"),array("॑","॒","᳠"),$text);
+	$text = convert($text);
+	return $text;
+}
+
 
 
 /* Functions which are not used in the code */

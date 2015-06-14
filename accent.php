@@ -37,7 +37,10 @@ $gender = $_GET["gender"];
 global $storedata;
 
 echo $header;
-echo "Input word is - ".$first;
+echo '<p class="red">Input word is - '.$first.'</p>';
+/* Displaying the udAtta, anudAtta, svarita mArks. */
+echo '<p class="hn">Please note - We have used ॑ to denote udAtta,  ॒ to denote anudAtta and  ᳠ to denote svarita</p>';
+echo '<hr>';
 $text = array($first);
 $storedata=array();
 
@@ -72,11 +75,38 @@ elseif (ends($text,array("danta","pAda","hasta","keSa","ozWa","muKa","sarva","vi
 	storedata('Pi-29','sa',0);
 }
 /* prANinAM kupUrvam (30) */
-elseif (arr($text,'/[aAiIuUfFxXeEoO][kKgGN][a]$/') && $gender==='n')
+elseif (arr($text,'/[aAiIuUfFxXeEoO][kKgGN][a]$/') && ends($text,array("Suka","vfka","kAka","koka","baka",),1))
 {
 	storedata('Pi-24','pa',0);
 	$text = AdyudAtta(0);
-	storedata('Pi-26','sa',0);
+	storedata('Pi-30','sa',0);
+}
+/* KayyuvarNaM kRtrimAkhyA cet (31) */
+elseif ($_GET['phit']==='7.1')
+{
+	storedata('Pi-24','pa',0);
+	$text = preg_accent('/([uU])([KPCWTcwtkp])/','$1^$2',0);
+	storedata('Pi-31','sa',0);
+}
+/* arjunasya tRNAkhyA cet (16) */
+elseif ($_GET['phit']==='3.1')
+{
+	$text = antodAtta(0);
+	storedata('Pi-16','sa',0);
+}
+/* unarvanantAnAm (32) */
+elseif (ends($text,array("una","ruRa","f","van"),1))
+{
+	storedata('Pi-24','pa',0);
+	$text = one(array("una","ruRa","f","van"),array("u^na","ru^Ra","f^","va^n"),0);
+	storedata('Pi-32','sa',0);
+}
+/* varNAnAM taNatinitAntAnAm (33) */
+elseif (ends($text,array("eta","Sveta","rohita","lohita","harita","SoRa","pfSni","Siti","pfzat","harit"),1))
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyudAtta(0);
+	storedata('Pi-33','sa',0);
 }
 /* nabviSayasyAnisantasya (26) */
 elseif (!arr($text,'/is$/') && $gender==='n')
@@ -189,12 +219,6 @@ elseif (ends($text,array("pfzWa"),1) && $veda==="0")
 {
 	$text = AdyantodAttavA(0);
 	storedata('Pi-15','sa',0);
-}
-/* arjunasya tRNAkhyA cet (16) */
-elseif ($_GET['phit']==='3.1')
-{
-	$text = antodAtta(0);
-	storedata('Pi-16','sa',0);
 }
 /* Aryasya svAmyAkhyA cet (17) */
 elseif ($_GET['phit']==='4.1')
