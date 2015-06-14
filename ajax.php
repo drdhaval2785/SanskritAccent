@@ -52,6 +52,20 @@ exit;
 // ajax requirements.doc is created for user feedback, where according to SK, it is not possible for machine to decide what is the intention of the user.
 
 /* main coding part */
+if(ends($arrWord,array("akza"),2))
+{		
+	$html .= '<div id="step11">';
+	$html .= '<input required type="radio" value="9.1" name="phit" > देवने ';
+	$html .= '<input required type="radio" value="9.2" name="phit" > अदेवने ';
+	$html .= '</div>';
+}
+if(arr($arrWord,'/^([^aAiIuUfFxXeEoO]*)[aiu]/') && arr($arrWord,'/[aiufx]([^aAiIuUfFxXeEoO]*)$/') )
+{		
+	$html .= '<div id="step11">';
+	$html .= '<input required type="radio" value="8.1" name="phit" > ताच्छील्ये ';
+	$html .= '<input required type="radio" value="8.2" name="phit" > अन्य ';
+	$html .= '</div>';
+}
 if(ends($arrWord,array("dakziRa"),1))
 {		
 	$html .= '<div id="step11">';

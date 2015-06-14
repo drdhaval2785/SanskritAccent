@@ -46,8 +46,22 @@ $storedata=array();
 
 /* athAdiH prAk zakaTeH (24) */
 // This is adhikArasUtra. It is implicitly coded in each code fragment from 25 to 69.
+/* akSasyAdevanasya (35) */
+if ($_GET['phit']==='9.2')
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyudAtta(0);
+	storedata('Pi-35','sa',0);
+}
+/* hrasvAntasya hrasvamanRttAcCIlye (34) */
+elseif ($_GET['phit']==='8.1')
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyudAtta(0);
+	storedata('Pi-34','sa',0);
+}
 /* hrasvAntasya strIvizayasya (25) */
-if (arr($text,'/[iu]$/') && $gender==='f')
+elseif (arr($text,'/[iu]$/') && $gender==='f')
 {
 	storedata('Pi-24','pa',0);
 	$text = AdyudAtta(0);
