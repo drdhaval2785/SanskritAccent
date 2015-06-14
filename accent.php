@@ -57,6 +57,27 @@ elseif (ends($text,array("kASa","kuSa","kunda","mAza","tila","mudga","kASA","kuS
 	$text = AdyudAtta(0);
 	storedata('Pi-27','sa',0);
 }
+/* nraH saGkhyAyAH (28) */
+elseif (sub(array("paYcan","navan","daSan","catur","catuH","catuz","paYca","nava","daSa","catvAr"),blank(0),blank(0),0))
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyudAtta(0);
+	storedata('Pi-28','sa',0);
+}
+/* svAGgaziTAmadantAnAm (29) */
+elseif (ends($text,array("danta","pAda","hasta","keSa","ozWa","muKa","sarva","viSva","itara","tva","nema","sima","eka","etara"),2))
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyudAtta(0);
+	storedata('Pi-29','sa',0);
+}
+/* prANinAM kupUrvam (30) */
+elseif (arr($text,'/[aAiIuUfFxXeEoO][kKgGN][a]$/') && $gender==='n')
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyudAtta(0);
+	storedata('Pi-26','sa',0);
+}
 /* nabviSayasyAnisantasya (26) */
 elseif (!arr($text,'/is$/') && $gender==='n')
 {

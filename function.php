@@ -3419,7 +3419,7 @@ function antodAtta($n)
 	global $text;
 	foreach ($text as $value)
 	{
-		$val[] = preg_replace('/([aAiIuUeEoO])([^aAiIuUeEoO]*)$/','$1^$2',$value);
+		$val[] = preg_replace('/([aAiIuUfFxXeEoO])([^aAiIuUfFxXeEoO]*)$/','$1^$2',$value);
 	}
 	if ($n===0)
 	{
@@ -3436,7 +3436,7 @@ function antAnudAtta($n)
 	global $text;
 	foreach ($text as $value)
 	{
-		$val[] = preg_replace('/([aAiIuUeEoO])([^aAiIuUeEoO]*)$/','$1_$2',$value);
+		$val[] = preg_replace('/([aAiIuUfFxXeEoO])([^aAiIuUfFxXeEoO]*)$/','$1_$2',$value);
 	}
 	if ($n===0)
 	{
@@ -3453,7 +3453,7 @@ function AdyudAtta($n)
 	global $text;
 	foreach ($text as $value)
 	{
-		$val[] = preg_replace('/^([^aAiIuUeEoO]*)([aAiIuUeEoO])/','$1$2^',$value);
+		$val[] = preg_replace('/^([^aAiIuUfFxXeEoO]*)([aAiIuUfFxXeEoO])/','$1$2^',$value);
 	}
 	if ($n===0)
 	{
@@ -3470,7 +3470,7 @@ function AdyanudAtta($n)
 	global $text;
 	foreach ($text as $value)
 	{
-		$val[] = preg_replace('/^([^aAiIuUeEoO]*)([aAiIuUeEoO])/','$1$2_',$value);
+		$val[] = preg_replace('/^([^aAiIuUfFxXeEoO]*)([aAiIuUfFxXeEoO])/','$1$2_',$value);
 	}
 	if ($n===0)
 	{
@@ -3487,8 +3487,8 @@ function AdyantodAttavA($n)
 	global $text;
 	foreach ($text as $value)
 	{
-		$val[] = preg_replace('/^([^aAiIuUeEoO]*)([aAiIuUeEoO])/','$1$2^',$value);
-		$val[] = preg_replace('/([aAiIuUeEoO])([^aAiIuUeEoO]*)$/','$1^$2',$value);
+		$val[] = preg_replace('/^([^aAiIuUfFxXeEoO]*)([aAiIuUfFxXeEoO])/','$1$2^',$value);
+		$val[] = preg_replace('/([aAiIuUfFxXeEoO])([^aAiIuUfFxXeEoO]*)$/','$1^$2',$value);
 	}
 	if ($n===0)
 	{
@@ -3505,8 +3505,8 @@ function AdyantAnudAttavA($n)
 	global $text;
 	foreach ($text as $value)
 	{
-		$val[] = preg_replace('/^([^aAiIuUeEoO]*)([aAiIuUeEoO])/','$1$2_',$value);
-		$val[] = preg_replace('/([aAiIuUeEoO])([^aAiIuUeEoO]*)$/','$1_$2',$value);
+		$val[] = preg_replace('/^([^aAiIuUfFxXeEoO]*)([aAiIuUfFxXeEoO])/','$1$2_',$value);
+		$val[] = preg_replace('/([aAiIuUfFxXeEoO])([^aAiIuUfFxXeEoO]*)$/','$1_$2',$value);
 	}
 	if ($n===0)
 	{
@@ -3523,8 +3523,8 @@ function antasvaritodAttavA($n)
 	global $text;
 	foreach ($text as $value)
 	{
-		$val[] = preg_replace('/([aAiIuUeEoO])([^aAiIuUeEoO]*)$/','$1$2^',$value);
-		$val[] = preg_replace('/([aAiIuUeEoO])([^aAiIuUeEoO]*)$/','$1$2#',$value);
+		$val[] = preg_replace('/([aAiIuUfFxXeEoO])([^aAiIuUfFxXeEoO]*)$/','$1$2^',$value);
+		$val[] = preg_replace('/([aAiIuUfFxXeEoO])([^aAiIuUfFxXeEoO]*)$/','$1$2#',$value);
 	}
 	if ($n===0)
 	{
