@@ -3560,6 +3560,11 @@ function convert_accent($text)
 	$text = convert($text);
 	return $text;
 }
+/* laghAvante function */
+function laghAvante($n)
+{
+	global $text;
+}
 
 
 

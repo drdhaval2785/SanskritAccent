@@ -74,14 +74,14 @@ elseif (ends($text,array("grAma","soma","yAma","purUza","SUra","vfdDa",),2)) // 
 	$text = AdyudAtta(0);
 	storedata('Pi-38','sa',0);
 }
-/* lubantasyopameyopameyanAmadheyasya (41) */
+/* rAjavizeSasya yamanvA cet (41) */
 elseif (ends($text,array("ANga","sOhma"),2))
 {
 	storedata('Pi-24','pa',0);
 	$text = AdyudAtta(0);
 	storedata('Pi-41','sa',0);
 }
-/* lubantasyopameyopameyanAmadheyasya (40) */
+/* na vRkSaparvatavizeSavyAghrasiMhamahiSANAm (40) */
 // Check whether the interpretation is correct or not. It seems that 39,40 are not word specific. They are context dependent.
 elseif (ends($text,array("vfkza","tAla","meru","vyaGra","siMha","mahiza","plakza","nyagroDa","aSvatTa","himavAn","mandara","mahAgiri"),2))
 {
