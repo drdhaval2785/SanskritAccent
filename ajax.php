@@ -117,6 +117,13 @@ if(arr($arrWord,'/[uU][KPCWTcwtkp]/') )
 	$html .= '<input required type="radio" value="7.2" name="phit" > अन्य ';
 	$html .= '</div>';
 }
+if(ends($arrWord,array("arDa"),1) )
+{		
+	$html .= '<div id="step11">';
+	$html .= '<input required type="radio" value="10.1" name="phit" > असमद्योतने ';
+	$html .= '<input required type="radio" value="10.2" name="phit" > समद्योतने ';
+	$html .= '</div>';
+}
 	
 
 

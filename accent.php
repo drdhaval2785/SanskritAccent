@@ -53,6 +53,50 @@ if ($_GET['phit']==='9.2')
 	$text = AdyudAtta(0);
 	storedata('Pi-35','sa',0);
 }
+/* ardhasyAsamadyotane (36) */
+elseif ($_GET['phit']==='10.1')
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyudAtta(0);
+	storedata('Pi-36','sa',0);
+}
+/* pItadrvarthAnAm (37) */
+elseif (ends($text,array("pItadru","pItadAru","devadAru","BadradAru"),2)) // The list is taken from zAntanava's phiTsUtras 99999990290369 of DLI www.dli.gov.in. Also see 99999990293891 svarasiddhAntacandrikA of DLI.
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyudAtta(0);
+	storedata('Pi-37','sa',0);
+}
+/* grAmAdInAM ca (38) */
+elseif (ends($text,array("grAma","soma","yAma","purUza","SUra","vfdDa",),2)) // AkRtigaNa.
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyudAtta(0);
+	storedata('Pi-38','sa',0);
+}
+/* lubantasyopameyopameyanAmadheyasya (41) */
+elseif (ends($text,array("ANga","sOhma"),2))
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyudAtta(0);
+	storedata('Pi-41','sa',0);
+}
+/* lubantasyopameyopameyanAmadheyasya (40) */
+// Check whether the interpretation is correct or not. It seems that 39,40 are not word specific. They are context dependent.
+elseif (ends($text,array("vfkza","tAla","meru","vyaGra","siMha","mahiza","plakza","nyagroDa","aSvatTa","himavAn","mandara","mahAgiri"),2))
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyudAtta(0);
+	storedata('Pi-40','sa',0);
+}
+/* lubantasyopameyopameyanAmadheyasya (39) */
+// Check whether the interpretation is correct or not.
+elseif (ends($text,array("caYcA","rOdra"),2))
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyudAtta(0);
+	storedata('Pi-39','sa',0);
+}
 /* hrasvAntasya hrasvamanRttAcCIlye (34) */
 elseif ($_GET['phit']==='8.1')
 {
