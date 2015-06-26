@@ -37,7 +37,7 @@ $gender = $_GET["gender"];
 global $storedata;
 
 echo $header;
-echo '<p class="red">Input word is - '.$first.'</p>';
+echo '<p class="red">Input word is - '.convert($first).'</p>';
 /* Displaying the udAtta, anudAtta, svarita mArks. */
 echo '<p class="hn">Please note - We have used ॑ to denote udAtta,  ॒ to denote anudAtta and  ᳠ to denote svarita</p>';
 echo '<hr>';
