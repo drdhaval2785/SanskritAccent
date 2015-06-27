@@ -44,6 +44,7 @@ echo '<hr>';
 $text = array($first);
 $storedata=array();
 
+
 /* athAdiH prAk zakaTeH (24) */
 // This is adhikArasUtra. It is implicitly coded in each code fragment from 25 to 69.
 /* akSasyAdevanasya (35) */
@@ -59,6 +60,13 @@ elseif ($_GET['phit']==='10.1')
 	storedata('Pi-24','pa',0);
 	$text = AdyudAtta(0);
 	storedata('Pi-36','sa',0);
+}
+/* laghAvante dvayozca bahvaSo guruH (42) */
+elseif (arr($text,$pattern1)||twolaghuoneguru())
+{
+	storedata('Pi-24','pa',0);
+	$text = laghAvante(); // svarasiddhAntacandrikA says that in case of more than one guru, all get optional udAttatva.
+	storedata('Pi-42','sa',0);
 }
 /* pItadrvarthAnAm (37) */
 elseif (ends($text,array("pItadru","pItadAru","devadAru","BadradAru"),2)) // The list is taken from zAntanava's phiTsUtras 99999990290369 of DLI www.dli.gov.in. Also see 99999990293891 svarasiddhAntacandrikA of DLI.
