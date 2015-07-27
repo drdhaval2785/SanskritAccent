@@ -61,6 +61,66 @@ elseif ($_GET['phit']==='10.1')
 	$text = AdyudAtta(0);
 	storedata('Pi-36','sa',0);
 }
+/* strIviSayavarNAkSupUrvANAm (43) */
+elseif (arr($text,'/[AI]$/') || ends($text,array("SyenI","hariRI"),2) || ends($text,array("akzu"),1))
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyudAtta(0);
+	storedata('Pi-43','sa',0);
+}
+/* igantAnAM ca dvyaSAm (49) */
+// pending to count dvyaSAm
+elseif (arr($text,'/[iIuUfFx]$/') )
+{
+	storedata('Pi-24','pa',0);
+	$text = antyapUrvodAtta();
+	storedata('Pi-49','sa',0);
+}
+/* zakunInAM ca laghu pUrvam (44) */
+// The examples vary in phiTsUtra vRtti and laghusiddhAntakaumudI. Please have a look.
+elseif ( ends($text,array("kukkuwa","tittiri"),2) )
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyudAtta(0);
+	storedata('Pi-44','sa',0);
+}
+/* zakunInAM ca laghu pUrvam (44) */
+// This is according to phiTsUtra vRtti.
+elseif ( ends($text,array("kfkavAku","kapota"),2) )
+{
+	storedata('Pi-24','pa',0);
+	$text = laghAvante();
+	storedata('Pi-44','sa',0);
+}
+/* nartuprANyAkyAyAm (45) */
+elseif ( ends($text,array("vasanta","kfkalAsa"),2) )
+{
+	storedata('Pi-24','pa',0);
+	$text = antodAtta(0);
+	storedata('Pi-45','sa',0);
+}
+/* dhAnyAnAM ca vRddhakSAntAnAm (46) */
+elseif (ends($text,array("SyAmAka","mAza","SyAmAkA","mAzA"),1))
+{
+	storedata('Pi-24','pa',0);
+	$text = laghAvante(); // svarasiddhAntacandrikA says that in case of more than one guru, all get optional udAttatva.
+	storedata('Pi-46','sa',0);
+}
+/* hayAdInAmasaMyuktalAntAnAmantaH pUrvaM vA (48) */
+elseif (arr($text,'/['.pc('hy').']*['.pc('ac').'][l][a]$/'))
+{
+	storedata('Pi-24','pa',0);
+	$text = antyapUrvodAtta(); // svarasiddhAntacandrikA says that in case of more than one guru, all get optional udAttatva.
+	storedata('Pi-48','sa',0);
+}
+/* janapadazabdAnAmaSantAnAm (47) */
+// aSantAnAm / aSAntAnAm seems to be an issue in grammar texts.
+elseif (ends($text,$janapada,2))
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyudAtta(0); // svarasiddhAntacandrikA says that in case of more than one guru, all get optional udAttatva.
+	storedata('Pi-47','sa',0);
+}
 /* laghAvante dvayozca bahvaSo guruH (42) */
 elseif (arr($text,$pattern1)||twolaghuoneguru())
 {
