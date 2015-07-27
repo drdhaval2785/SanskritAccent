@@ -69,8 +69,7 @@ elseif (arr($text,'/[AI]$/') || ends($text,array("SyenI","hariRI"),2) || ends($t
 	storedata('Pi-43','sa',0);
 }
 /* igantAnAM ca dvyaSAm (49) */
-// pending to count dvyaSAm
-elseif (arr($text,'/[iIuUfFx]$/') )
+elseif (arr($text,'/[iIuUfFx]$/') && dvyac())
 {
 	storedata('Pi-24','pa',0);
 	$text = antyapUrvodAtta();

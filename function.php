@@ -3607,6 +3607,25 @@ function twolaghuoneguru()
 		return false;
 	}
 }
+function dvyac()
+{
+	global $text;
+	$con = array();
+	foreach ($text as $val)
+	{
+		$break = preg_split('/[aAiIuUfFxXeoEO]/',$val);
+		if (count($break)==3)
+		{ $con[]=1; break; }
+	}
+	if (in_array(1,$con))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
 
 
 /* Functions which are not used in the code */
