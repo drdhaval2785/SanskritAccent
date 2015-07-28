@@ -44,9 +44,13 @@ echo '<hr>';
 $text = array($first);
 $storedata=array();
 
-
+// Numbers refer to that of SK with Sri Balamanorama 1911 edition.
 /* athAdiH prAk zakaTeH (24) */
-// This is adhikArasUtra. It is implicitly coded in each code fragment from 25 to 69.
+// This is adhikArasUtra. It is implicitly coded in each code fragment from 25 to 68.
+/* atha dvitIyaM prAgISAt (50) */
+// This is adhikArasUtra. It is implicitly coded in each code fragment from 51 to 65.
+/* tryacAM prAGmakarAt (51) */
+// This is adhikArasUtra. It is implicitly coded in each code fragment from 52 to 56.
 /* akSasyAdevanasya (35) */
 if ($_GET['phit']==='9.2')
 {
@@ -60,6 +64,52 @@ elseif ($_GET['phit']==='10.1')
 	storedata('Pi-24','pa',0);
 	$text = AdyudAtta(0);
 	storedata('Pi-36','sa',0);
+}
+/* svAGgAnAmakurvAdInAm (52) */
+elseif (in_array(3,countac()) && ends($text,array("lalAwa","rarAwa","jaGana","upasTa","jaWara","udara"),2) )
+{
+	storedata('Pi-24','pa',0);
+	storedata('Pi-50','pa',0);
+	storedata('Pi-51','pa',0);
+	$text = dvitIyodAtta(0);
+	storedata('Pi-52','sa',0);
+}
+/* mAdInAM ca (53) */
+elseif (in_array(3,countac()) && arr($text,'/^[m]/') )
+{
+	storedata('Pi-24','pa',0);
+	storedata('Pi-50','pa',0);
+	storedata('Pi-51','pa',0);
+	$text = dvitIyodAtta(0);
+	storedata('Pi-53','sa',0);
+}
+/* zAdInAM zAkAnAm (54) */
+// Why violation of tryacAM is not mentioned anywhere.
+elseif ( ends($text,array("SItanyA","SatapuzpA","suvarcalA","sarzapA","sasPuwA"),2))
+{
+	storedata('Pi-24','pa',0);
+	storedata('Pi-50','pa',0);
+	storedata('Pi-51','pa',0);
+	$text = dvitIyodAtta(0);
+	storedata('Pi-54','sa',0);
+}
+/* pAntAnAM gurvAdInAm (55) */
+elseif (in_array(3,countac()) && (arr($text,'/^([^aAiIuUfFxXeEoO]*)([AIUFXeEoO])([^aAiIuUfFxXeEoO]*)(['.pc('ac').'])/') || arr($text,'/([aiufx]*)(['.pc('hl').'MH])(['.pc('hl').'MH])(['.pc('hl').'MH]*)(['.pc('ac').'])/') ) && arr($text,'/[p][a]$/') )
+{
+	storedata('Pi-24','pa',0);
+	storedata('Pi-50','pa',0);
+	storedata('Pi-51','pa',0);
+	$text = dvitIyodAtta(0);
+	storedata('Pi-55','sa',0);
+}
+/* yutAnyaNtyantAnAm (56) */
+elseif (in_array(3,countac()) && (ends($text,array("yuta","ani","aRi"),1) )
+{
+	storedata('Pi-24','pa',0);
+	storedata('Pi-50','pa',0);
+	storedata('Pi-51','pa',0);
+	$text = dvitIyodAtta(0);
+	storedata('Pi-56','sa',0);
 }
 /* strIviSayavarNAkSupUrvANAm (43) */
 elseif (arr($text,'/[AI]$/') || ends($text,array("SyenI","hariRI"),2) || ends($text,array("akzu"),1))

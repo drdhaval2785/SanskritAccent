@@ -3548,6 +3548,23 @@ function antyapUrvodAtta()
 	}
 	return $val;
 }
+function dvitIyodAtta($n)
+{
+	global $text;
+	foreach ($text as $value)
+	{
+		$val[] = preg_replace('/^([^aAiIuUfFxXeEoO]*)(['.pc('ac').'])([^aAiIuUfFxXeEoO]*)(['.pc('ac').'])([^aAiIuUfFxXeEoO]*)(['.pc('ac').'])([^aAiIuUfFxXeEoO]*)$/','$1$2$3$4^$5$6$7',$value);
+	}
+	if ($n===0)
+	{
+		$text = $val;		
+	}
+	elseif($n===1)
+	{
+		$text = array_merge($text,$val);
+	}
+	return $text;
+}
 function preg_accent($regex,$rep,$n)
 {
 	global $text;
@@ -3627,7 +3644,16 @@ function dvyac()
 	}
 }
 
-
+function countac()
+{
+	global $text;
+	foreach($text as $value)
+	{
+		$break = preg_split('/[aAiIuUfFxXeoEO]/',$value);
+		$val[] = count($break) - 1;
+	}
+	return $val;
+}
 /* Functions which are not used in the code */
 /* Function f to find the nth letter in the word */
 function f($text,$n) // Not used in code.
