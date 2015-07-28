@@ -3583,6 +3583,23 @@ function AdidvitIyodAtta($n)
 	}
 	return $text;
 }
+function antyAtpUrvodAtta($n)
+{
+	global $text;
+	foreach ($text as $value)
+	{
+		$val[] = preg_replace('/(['.pc('ac').'])([^aAiIuUfFxXeEoO]*)(['.pc('ac').'])([^aAiIuUfFxXeEoO]*)$/','$1^$2$3$4',$value);
+	}
+	if ($n===0)
+	{
+		$text = $val;		
+	}
+	elseif($n===1)
+	{
+		$text = array_merge($text,$val);
+	}
+	return $text;
+}
 
 function preg_accent($regex,$rep,$n)
 {

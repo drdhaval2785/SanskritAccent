@@ -99,13 +99,72 @@ elseif (ends($text,array("Pala"),1) )
 	$text = AdidvitIyodAtta(0);
 	storedata('Pi-61','sa',0);
 }
+/* sAMkAzyakAmpilyanAsikyadArvAghATAnAm (65) */
+elseif (ends($text,array("sANkASya","kAmpilya","nAsikya","dArvAGAwa"),2) )
+{
+	storedata('Pi-24','pa',0);
+	storedata('Pi-50','pa',0);
+	$text = antyAtpUrvodAtta(1);
+	$text = one(array("sANkASya","kAmpilya","nAsikya","dArvAGAwa"),array("sA^NkASya","kA^mpilya","nA^sikya","dArvA^GAwa"),0);
+	storedata('Pi-65','sa',0);
+}
+/* ISAntasya hayAderAdirvA (66) */
+elseif (arr($text,'/^['.pc('hy').'](['.pc('al').'MH]*)[I][z][aA]$/'))
+{
+	storedata('Pi-24','pa',0);
+	storedata('Pi-50','pa',0);
+	$text = AdidvitIyodAtta(0);
+	storedata('Pi-66','sa',0);
+}
+/* uzIradAzerakapAlapalAlazaivAlazyAmAkazArIrazarAvahRdayahiraNyAraNyApatyadevarANAm (67) */
+elseif (ends($text,array("uSIra","dASera","kapAla","palAla","SEvAla","SyAmAka","SArIra","SarAva","hfdaya","hiraRya","araRya","apatya","devara",),2) )
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyudAtta(0);
+	storedata('Pi-67','sa',0);
+}
+/* mahiSyaSADhayorjAyeSTakAkhyA cet (68) */
+elseif (ends($text,array("mahizI","azAQA",),2) )
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyantodAttavA(0);
+	storedata('Pi-68','sa',0);
+}
 /* yAntasyAntyAtpUrvam (62) */
 elseif (ends($text,array("ya","yA"),1) )
 {
 	storedata('Pi-24','pa',0);
 	storedata('Pi-50','pa',0);
-	$text = AdidvitIyodAtta(0);
+	$text = antyAtpUrvodAtta(0);
 	storedata('Pi-62','sa',0);
+}
+/* thAntasya nAlaghunI (63) */
+// Acc to SK.
+elseif (ends($text,array("sanATA","sanATa"),2) )
+{
+	storedata('Pi-24','pa',0);
+	storedata('Pi-50','pa',0);
+	$text = antyAtpUrvodAtta(0);
+	storedata('Pi-63','sa',0);
+}
+/* thAntasya nAlaghunI (63) */
+// Acc to other texts.
+elseif (ends($text,array("A"),1) && arr($text,'/[aiufx]['.pc('hl').'MH][A]$/') )
+{
+	storedata('Pi-24','pa',0);
+	storedata('Pi-50','pa',0);
+	$text = antyAtpUrvodAtta(0);
+	storedata('Pi-63','sa',0);
+}
+/* ziMzumArodumbarabalIvardoSTrArapurUravasAM ca (64) */
+// I am not sure whether the dvitIyaM word stands for second or thirdlast.
+elseif (ends($text,array("SiMSumAra","udumbara","balIvarda","uzwrAra","uzwAra","purUravas","purUravA"),2) )
+{
+	storedata('Pi-24','pa',0);
+	storedata('Pi-50','pa',0);
+	$text = antyAtpUrvodAtta(1);
+	$text = one(array("SiMSumAra","udumbara","balIvarda","uzwrAra","uzwAra","purUravas","purUravA"),array("SiMSu^mAra","udu^mbara","balI^varda","uzwrA^ra","uzwA^ra","purU^ravas","purU^ravA"),0);
+	storedata('Pi-64','sa',0);
 }
 /* makaravarUDhapArevatavitastekSvArjidrAkSAkalomaakaaSThApeShThAkASInAmAdirvA (57) */
 // Some alternative readings are given in books, which need to be examined. Pending.
