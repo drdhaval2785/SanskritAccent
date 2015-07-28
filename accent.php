@@ -81,6 +81,32 @@ elseif (ends($text,array("kardama","kulawA","udaka","gAnDAri"),2) )
 	$text = AdidvitIyodAtta(0);
 	storedata('Pi-59','sa',0);
 }
+/* sugandhitejanasya te vA (60) */
+elseif (ends($text,array("suganDitejana","suganDitejanA"),2) )
+{
+	storedata('Pi-24','pa',0);
+	storedata('Pi-50','pa',0);
+	$text = AdidvitIyodAtta(0);
+	$text = one(array("su^ganDitejana","su^ganDitejanA"),array("suganDite^jana","suganDite^janA"),1);
+	storedata('Pi-60','sa',0);
+}
+/* napaH phalAntAnAm (61) */
+// napuMsakam pending.
+elseif (ends($text,array("Pala"),1) )
+{
+	storedata('Pi-24','pa',0);
+	storedata('Pi-50','pa',0);
+	$text = AdidvitIyodAtta(0);
+	storedata('Pi-61','sa',0);
+}
+/* yAntasyAntyAtpUrvam (62) */
+elseif (ends($text,array("ya","yA"),1) )
+{
+	storedata('Pi-24','pa',0);
+	storedata('Pi-50','pa',0);
+	$text = AdidvitIyodAtta(0);
+	storedata('Pi-62','sa',0);
+}
 /* makaravarUDhapArevatavitastekSvArjidrAkSAkalomaakaaSThApeShThAkASInAmAdirvA (57) */
 // Some alternative readings are given in books, which need to be examined. Pending.
 elseif (ends($text,array("makara","varUQa","pArevata","vitastA","ikzu","Arji","drAkzA","kalA","umA","kAzWA","pezWA","kASI"),2) )
