@@ -65,6 +65,31 @@ elseif ($_GET['phit']==='10.1')
 	$text = AdyudAtta(0);
 	storedata('Pi-36','sa',0);
 }
+/* Chandasi ca (58) */
+elseif ($veda==='1' && ends($text,array("nAsikA"),2) )
+{
+	storedata('Pi-24','pa',0);
+	storedata('Pi-50','pa',0);
+	$text = AdidvitIyodAtta(0);
+	storedata('Pi-58','sa',0);
+}
+/* kardamAdInAM ca (59) */
+elseif (ends($text,array("kardama","kulawA","udaka","gAnDAri"),2) )
+{
+	storedata('Pi-24','pa',0);
+	storedata('Pi-50','pa',0);
+	$text = AdidvitIyodAtta(0);
+	storedata('Pi-59','sa',0);
+}
+/* makaravarUDhapArevatavitastekSvArjidrAkSAkalomaakaaSThApeShThAkASInAmAdirvA (57) */
+// Some alternative readings are given in books, which need to be examined. Pending.
+elseif (ends($text,array("makara","varUQa","pArevata","vitastA","ikzu","Arji","drAkzA","kalA","umA","kAzWA","pezWA","kASI"),2) )
+{
+	storedata('Pi-24','pa',0);
+	storedata('Pi-50','pa',0);
+	$text = AdidvitIyodAtta(0);
+	storedata('Pi-57','sa',0);
+}
 /* svAGgAnAmakurvAdInAm (52) */
 elseif (in_array(3,countac()) && ends($text,array("lalAwa","rarAwa","jaGana","upasTa","jaWara","udara"),2) )
 {
@@ -103,7 +128,7 @@ elseif (in_array(3,countac()) && (arr($text,'/^([^aAiIuUfFxXeEoO]*)([AIUFXeEoO])
 	storedata('Pi-55','sa',0);
 }
 /* yutAnyaNtyantAnAm (56) */
-elseif (in_array(3,countac()) && (ends($text,array("yuta","ani","aRi"),1) )
+elseif (in_array(3,countac()) && ends($text,array("yuta","ani","aRi"),1) )
 {
 	storedata('Pi-24','pa',0);
 	storedata('Pi-50','pa',0);

@@ -3565,6 +3565,25 @@ function dvitIyodAtta($n)
 	}
 	return $text;
 }
+function AdidvitIyodAtta($n)
+{
+	global $text;
+	foreach ($text as $value)
+	{
+		$val[] = preg_replace('/^([^aAiIuUfFxXeEoO]*)(['.pc('ac').'])([^aAiIuUfFxXeEoO]*)(['.pc('ac').'])/','$1$2$3$4^',$value);
+		$val[] = preg_replace('/^([^aAiIuUfFxXeEoO]*)(['.pc('ac').'])([^aAiIuUfFxXeEoO]*)(['.pc('ac').'])/','$1$2^$3$4',$value);
+	}
+	if ($n===0)
+	{
+		$text = $val;		
+	}
+	elseif($n===1)
+	{
+		$text = array_merge($text,$val);
+	}
+	return $text;
+}
+
 function preg_accent($regex,$rep,$n)
 {
 	global $text;
