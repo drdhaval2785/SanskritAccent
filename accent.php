@@ -81,6 +81,132 @@ elseif (ends($text,array("kardama","kulawA","udaka","gAnDAri"),2) )
 	$text = AdidvitIyodAtta(0);
 	storedata('Pi-59','sa',0);
 }
+/* zakaTizakaTyorakSaramakSaramparyAyeNa (69) */
+elseif (ends($text,array("Sakawi","SakawI"),2) )
+{
+	$text = one(array("Sakawi","SakawI"),array("Sa^kawi","Sa^kawI"),1);
+	$text = one(array("Sakawi","SakawI"),array("Saka^wi","Saka^wI"),1);
+	$text = one(array("Sakawi","SakawI"),array("Sakawi^","SakawI^"),0);
+	storedata('Pi-69','sa',0);
+}
+/* goSThajasya brAhmaNanAmadheyasya (70) */
+elseif (ends($text,array("gozWaja"),2) )
+{
+	$text = one(array("gozWaja"),array("go^zWaja"),1);
+	$text = one(array("gozWaja"),array("gozWa^ja"),1);
+	$text = one(array("gozWaja"),array("gozWaja^"),0);
+	storedata('Pi-70','sa',0);
+}
+/* pArAvatasyopottamavarjam (71) */
+elseif (ends($text,array("pArAvata"),2) )
+{
+	$text = one(array("pArAvata"),array("pA^rAvata"),1);
+	$text = one(array("pArAvata"),array("pArA^vata"),1);
+	$text = one(array("pArAvata"),array("pArAvata^"),0);
+	storedata('Pi-71','sa',0);
+}
+/* dhUmrajAnumuJjakezakAlavAlasTAlIpAkAnAmadhUjalasthAnAm (72) */
+elseif (ends($text,array("DUmrajAnu","muYjakeSa","kAlavAla"."sTAlIpAka"),2) )
+{
+	$text = one(array("DUmrajAnu","muYjakeSa","kAlavAla"."sTAlIpAka"),array("DUmra^jAnu","mu^YjakeSa","kA^lavAla"."sTAlI^pAka"),1);
+	$text = one(array("DUmrajAnu","muYjakeSa","kAlavAla"."sTAlIpAka"),array("DUmrajA^nu","muYjake^Sa","kAlavA^la"."sTAlIpA^ka"),1);
+	$text = one(array("DUmrajAnu","muYjakeSa","kAlavAla"."sTAlIpAka"),array("DUmrajAnu^","muYjakeSa^","kAlavAla^"."sTAlIpAka^"),0);
+	storedata('Pi-72','sa',0);
+}
+/* kapikezaharikezayozChandasi (73) */
+elseif (ends($text,array("kapikeSa","harikeSa"),2) && $veda==='1' )
+{
+	$text = one(array("kapikeSa","harikeSa"),array("ka^pikeSa","ha^rikeSa"),1);
+	$text = one(array("kapikeSa","harikeSa"),array("kapi^keSa","hari^keSa"),1);
+	$text = one(array("kapikeSa","harikeSa"),array("kapike^Sa","harike^Sa"),1);
+	$text = one(array("kapikeSa","harikeSa"),array("kapikeSa^","harikeSa^"),0);
+	storedata('Pi-73','sa',0);
+}
+/* nyaGsvarau svaritau (74) */
+elseif (ends($text,array("nyaN","svar"),2) )
+{
+	$text = one(array("nyaN","svar"),array("nya#N","sva#r"),0);
+	storedata('Pi-74','sa',0);
+}
+/* nyarbudavyalkazayorAdiH (75) */
+elseif (ends($text,array("nyarbuda","vyalkaSa"),2) )
+{
+	$text = one(array("nyarbuda","vyalkaSa"),array("nya#rbuda","vya#lkaSa"),0);
+	storedata('Pi-75','sa',0);
+}
+/* tilyazikyamatyakArSmaryadhAnyakanyArAjanyamanuSyANAmantaH (76) */
+elseif (ends($text,array("tilya","Sikya","matya","kArzmya","DAnya","kanyA","rAjanya","manuzya"),2) )
+{
+	$text = one(array("tilya","Sikya","matya","kArzmya","DAnya","kanyA","rAjanya","manuzya"),array("tilya#","Sikya#","matya#","kArzmya#","DAnya#","kanyA#","rAjanya#","manuzya#"),0);
+	storedata('Pi-76','sa',0);
+}
+/* bilvabhakSyavIryANi Chandasi (77) */
+elseif (ends($text,array("bilva","Bakzya","vIrya"),2) && $veda==="1" )
+{
+	$text = one(array("bilva","Bakzya","vIrya"),array("bilva#","Bakzya#","vIrya#"),0);
+	storedata('Pi-77','sa',0);
+}
+/* tvattvasamasimetyanuccAni (78) */
+elseif (ends($text,array("tvat","tva","sama","sima"),2) )
+{
+	$text = one(array("tvat","tva","sama","sima"),array("tva_t","tva_","sama_","sima_"),0);
+	storedata('Pi-78','sa',0);
+	/* simasyATarvaNe'nta udAttaH (79) */
+	if (ends($text,array("sima"),2) )
+	{
+		$text = one(array("sima"),array("sima^"),0);
+		storedata('Pi-79','sa',0);
+	}
+}
+/* upasargAzcAbhivarjam (81) */
+elseif (ends($text,$upasarga,2) && !ends($text,array("aBi"),2) )
+{
+	$text = AdyudAtta(0);
+	storedata('Pi-81','sa',0);
+}
+/* nipAtA AdyudAttAH (80) */
+elseif (ends($text,array("nUnam","nUnaM","SaSvat","SaSvad","yugapat","yugapad","BUyas","BUyaH","kUpat","kUpad","sUpat","sUpad","kaccit","kaccid","kiYcit","kiYcid","yatra","naha","hanta","mAkiH","mAkis","mAkim","mAkiM","nakiH","nakis","Akim","AkiM","nakim","nakiM","yAvat","yAvad","tAvat","tAvad","SrOzaw","vOzaw","svAhA","svaDA","vazaw","taTAhi","Kalu","aTo","aTa","suzWu","Adaha","avadattam","ahaMyus","ahaMyuH","astikzIrA","paSu","Sukam","yaTA","kaTA","taTA","aNga","Bos","BoH","aye","vizu","ekapade","Atas","AtaH"),2) )
+{
+	/* yatheti pAdAnte (85) */
+	if (ends($text,array("yaTA"),2))
+	{
+		$text = antodAtta(1);
+		storedata('Pi-85','sa',0);
+	}
+	$text = AdyudAtta(0);
+	storedata('Pi-80','sa',0);
+}
+/* evAdInAmantaH (82) */
+elseif (ends($text,array("eva","evam","evaM","kuvit","kuvid"),2) )
+{
+	$text = antodAtta(0);
+	storedata('Pi-82','sa',0);
+}
+/* prakArAdidviruktau parasyAnta udAttaH (86) */
+elseif (ends($text,array("pawupawu","yaTAyaTa","yaTAyaTAm"),2) )
+{
+	$text = antodAtta(0);
+	storedata('Pi-86','sa',0);
+}
+/* zeSaM sarvamanudAttam (87) */
+elseif (ends($text,array("praprAyam","praprAya","divedive"),2) )
+{
+	$text = AdyanudAtta(0);
+	storedata('Pi-87','sa',0);
+}
+/* vAvAdInAmubhAvudAttau (83) */
+// Meaning not clear
+elseif ( ends($text,array("vAvat","vAvad",),2) )
+{
+	$text = AdyantodAttavA(0);
+	storedata('Pi-83','sa',0);
+}
+/* cAdayo'nudAttAH (84) */
+elseif (ends($text,array("ca","vA","ha","net","ned","cet","ced","caR","mAN","naY","mA","na","tvE","dvE","nvE","rE","om","oM","tum","tuM","sma","a","A","i","I","u","U","e","E","o","O","pAw","pyAw","hE","he","Bos","BoH","dya","yut","yud",),2) )
+{
+	$text = AdyanudAtta(0);
+	storedata('Pi-84','sa',0);
+}
 /* sugandhitejanasya te vA (60) */
 elseif (ends($text,array("suganDitejana","suganDitejanA"),2) )
 {
