@@ -63,7 +63,7 @@ if(arr($arrWord,'/^([^aAiIuUfFxXeEoO]*)[aiu]/') && arr($arrWord,'/[aiufx]([^aAiI
 {		
 	$html .= '<div id="step11">';
 	$html .= '<input required type="radio" value="8.1" name="phit" > ताच्छील्ये ';
-	$html .= '<input required type="radio" value="8.2" name="phit" > अन्य ';
+	$html .= '<input required type="radio" value="8.2" name="phit" checked> अन्य ';
 	$html .= '</div>';
 }
 if(ends($arrWord,array("dakziRa"),1))

@@ -264,6 +264,12 @@ elseif (ends($text,array("ya","yA"),1) )
 	$text = antyAtpUrvodAtta(0);
 	storedata('Pi-62','sa',0);
 }
+/* khAntasyAzmAdeH (6) */
+elseif (arr($text,'/[K][aA]$/') && !arr($text,'/^[Sm]/'))
+{
+	$text = antodAtta(0);
+	storedata('Pi-6','sa',0);
+}
 /* thAntasya nAlaghunI (63) */
 // Acc to SK.
 elseif (ends($text,array("sanATA","sanATa"),2) )
@@ -275,13 +281,13 @@ elseif (ends($text,array("sanATA","sanATa"),2) )
 }
 /* thAntasya nAlaghunI (63) */
 // Acc to other texts.
-elseif (ends($text,array("A"),1) && arr($text,'/[aiufx]['.pc('hl').'MH][A]$/') )
+/*elseif (ends($text,array("A"),1) && arr($text,'/[aiufx]['.pc('hl').'MH][A]$/') )
 {
 	storedata('Pi-24','pa',0);
 	storedata('Pi-50','pa',0);
 	$text = antyAtpUrvodAtta(0);
 	storedata('Pi-63','sa',0);
-}
+}*/
 /* ziMzumArodumbarabalIvardoSTrArapurUravasAM ca (64) */
 // I am not sure whether the dvitIyaM word stands for second or thirdlast.
 elseif (ends($text,array("SiMSumAra","udumbara","balIvarda","uzwrAra","uzwAra","purUravas","purUravA"),2) )
@@ -347,6 +353,19 @@ elseif (in_array(3,countac()) && ends($text,array("yuta","ani","aRi"),1) )
 	$text = dvitIyodAtta(0);
 	storedata('Pi-56','sa',0);
 }
+/* svAGgaziTAmadantAnAm (29) */
+elseif (ends($text,array("danta","pAda","hasta","keSa","ozWa","muKa","gudA","sarva","viSva","itara","tva","nema","sima","eka","etara"),2))
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyudAtta(0);
+	storedata('Pi-29','sa',0);
+}
+/* pATalApAlaGkAmbAsAgarArthAnAm (2) */
+elseif (ends($text,array("pAwalA","surUpA","pAkalA","apAlaNka","Arevata","AragvaDa","mAtA","sAraga","samudra"),1))
+{
+	$text = antodAtta(0);
+	storedata('Pi-2','sa',0);
+}
 /* strIviSayavarNAkSupUrvANAm (43) */
 elseif (arr($text,'/[AI]$/') || ends($text,array("SyenI","hariRI"),2) || ends($text,array("akzu"),1))
 {
@@ -405,6 +424,20 @@ elseif (ends($text,$janapada,2))
 	storedata('Pi-24','pa',0);
 	$text = AdyudAtta(0); // svarasiddhAntacandrikA says that in case of more than one guru, all get optional udAttatva.
 	storedata('Pi-47','sa',0);
+}
+/* gehArthAnAmastriyAm (3) */
+// enumeration of other members pending.
+elseif (ends($text,array("geha","gfha"),1))
+{
+	$text = antodAtta(0);
+	storedata('Pi-3','sa',0);
+}
+/* gehArthAnAmastriyAm (3) */
+// astriyAm iti jJApakAt
+elseif (ends($text,array("SAlA"),1))
+{
+	$text = AdyudAtta(0);
+	storedata('Pi-3','sa',0);
 }
 /* laghAvante dvayozca bahvaSo guruH (42) */
 elseif (arr($text,$pattern1)||twolaghuoneguru())
@@ -478,13 +511,6 @@ elseif (sub(array("paYcan","navan","daSan","catur","catuH","catuz","paYca","nava
 	$text = AdyudAtta(0);
 	storedata('Pi-28','sa',0);
 }
-/* svAGgaziTAmadantAnAm (29) */
-elseif (ends($text,array("danta","pAda","hasta","keSa","ozWa","muKa","sarva","viSva","itara","tva","nema","sima","eka","etara"),2))
-{
-	storedata('Pi-24','pa',0);
-	$text = AdyudAtta(0);
-	storedata('Pi-29','sa',0);
-}
 /* prANinAM kupUrvam (30) */
 elseif (arr($text,'/[aAiIuUfFxXeEoO][kKgGN][a]$/') && ends($text,array("Suka","vfka","kAka","koka","baka",),1))
 {
@@ -513,7 +539,7 @@ elseif (ends($text,array("una","ruRa","f","van"),1))
 	storedata('Pi-32','sa',0);
 }
 /* varNAnAM taNatinitAntAnAm (33) */
-elseif (ends($text,array("eta","Sveta","rohita","lohita","harita","SoRa","pfSni","Siti","pfzat","harit"),1))
+elseif (ends($text,array("eta","Sveta","rohita","lohita","harita","SoRa","pfSni","Siti","pfzat","harit","kfzRa"),1))
 {
 	storedata('Pi-24','pa',0);
 	$text = AdyudAtta(0);
@@ -526,26 +552,6 @@ elseif (!arr($text,'/is$/') && $gender==='n')
 	$text = AdyudAtta(0);
 	storedata('Pi-26','sa',0);
 }
-/* pATalApAlaGkAmbAsAgarArthAnAm (2) */
-elseif (ends($text,array("pAwalA","surUpA","pAkalA","apAlaNka","Arevata","AragvaDa","mAtA","sAraga","samudra"),1))
-{
-	$text = antodAtta(0);
-	storedata('Pi-2','sa',0);
-}
-/* gehArthAnAmastriyAm (3) */
-// enumeration of other members pending.
-elseif (ends($text,array("geha","gfha"),1))
-{
-	$text = antodAtta(0);
-	storedata('Pi-3','sa',0);
-}
-/* gehArthAnAmastriyAm (3) */
-// astriyAm iti jJApakAt
-elseif (ends($text,array("SAlA"),1))
-{
-	$text = AdyudAtta(0);
-	storedata('Pi-3','sa',0);
-}
 /* gudasya ca (4) */
 elseif (ends($text,array("guda"),1))
 {
@@ -557,12 +563,6 @@ elseif (arr($text,'/[Dy][A]/'))
 {
 	$text = antodAtta(0);
 	storedata('Pi-5','sa',0);
-}
-/* khAntasyAzmAdeH (6) */
-elseif (arr($text,'/[K][aA]$/') && !arr($text,'/^[Sm]/'))
-{
-	$text = antodAtta(0);
-	storedata('Pi-6','sa',0);
 }
 /* baMhizWavatsaratiSatTAntAnAm (7) */
 elseif (ends($text,array("baMhizWa","vatsara","ti","Sat","Ta","TA"),1))
