@@ -22,7 +22,7 @@ The machine should also show the sUtras responsible for getting this accent.
 
 # How to test online
 
-Input your query on http://lanover.com/lan/sanskrit/SanskritAccent/accent.html and submit your query.
+Input your query on http://www.sanskritworld.in/sanskrittool/SanskritAccent/accent.html and submit your query.
 
 # Contribute
 

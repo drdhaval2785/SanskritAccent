@@ -1,6 +1,26 @@
 <?php
-/* Trying fo accents */
+/* Trying for accents */
 /* _ for anudAtta, ^ for udAtta, # for svarita inside the machine process. */
+ /* This code is developed by Dr. Dhaval Patel (drdhaval2785@gmail.com) of www.sanskritworld.in and Ms. Sivakumari Katuri.
+  * Layout assistance by Mr Marcis Gasuns.
+  * Available under GNU licence.
+  * Version 1.0.0 date 4 October 2015
+  * The latest source code is available at https://github.com/drdhaval2785/SanskritAccent
+  * The bugs are reported and dealt with at https://github.com/drdhaval2785/SanskritAccent/issues
+  * Acknowledgements: I extend my heartfelt thanks to Ananda Loponen for the code to convert devanagari and various sanskrit transliterations. That can be accessed at http://www.ingmardeboer.nl/php/diCrunch.php?act=help.
+  * I also extend my gratitude to gloomy.penguin of stackoverflow.com, who helped me create dvitva and lopa functions, without which I would be handicapped.
+  * For setup, copy and paste accent.php, accent.html, script.js, ajax.php, function.php, mystyle.css, slp-dev.php and dev-slp.php to your localhost or server and run subanta.html from browser.
+  * accent.html is the frontend for the code.
+  * ajax.php and script.js are codes which asks for user feedback for particular words. 
+  * function.php stores the frequently used functions in this code (The description on how to use the code is there in function.php).
+  * accent.php is the code which actually gives the output of the word accent with relevant phiTsUtras.
+  * slp-dev.php is for converting SLP1 data to Devanagari. 
+  * dev-slp.php is for converting Devanagari data to SLP1.
+  * Mystyle.css is stylesheet where you can change your preferences.
+  * The code uses jquery.
+  * The description part uses Howard Kyoto protocol.
+  * The coding uses SLP1 transliteration.
+  */
  
 /* Including arrays and functions */
 include "function.php"; // includes the file function.php which is collection of functions used in this code.
@@ -72,6 +92,18 @@ elseif ($veda==='1' && ends($text,array("nAsikA"),2) )
 	storedata('Pi-50','pa',0);
 	$text = AdidvitIyodAtta(0);
 	storedata('Pi-58','sa',0);
+}
+/* aGguSThodakabakavazAnAM chandasyantaH (14) */
+elseif (ends($text,array("aNguzWa","udaka","baka","vaSA","vaSa"),1) && $veda==="1")
+{
+	$text = antodAtta(0);
+	storedata('Pi-14','sa',0);
+}
+/* aGguSThodakabakavazAnAM chandasyantaH (14) */
+elseif (ends($text,array("vaSA"),1) && $veda==="0")
+{
+	$text = AdyudAtta(0);
+	storedata('Pi-14','sa',0);
 }
 /* kardamAdInAM ca (59) */
 elseif (ends($text,array("kardama","kulawA","udaka","gAnDAri"),2) )
@@ -256,6 +288,12 @@ elseif (ends($text,array("mahizI","azAQA",),2) )
 	$text = AdyantodAttavA(0);
 	storedata('Pi-68','sa',0);
 }
+/* Aryasya svAmyAkhyA cet (17) */
+elseif ($_GET['phit']==='4.1')
+{
+	$text = antodAtta(0);
+	storedata('Pi-17','sa',0);
+}
 /* yAntasyAntyAtpUrvam (62) */
 elseif (ends($text,array("ya","yA"),1) )
 {
@@ -361,10 +399,28 @@ elseif (ends($text,array("danta","pAda","hasta","keSa","ozWa","muKa","gudA","sar
 	storedata('Pi-29','sa',0);
 }
 /* pATalApAlaGkAmbAsAgarArthAnAm (2) */
-elseif (ends($text,array("pAwalA","surUpA","pAkalA","apAlaNka","Arevata","AragvaDa","mAtA","sAraga","samudra"),1))
+elseif (ends($text,array("pAwalA","surUpA","pAkalA","apAlaNka","Arevata","AragvaDa","mAtA","sAraga","samudra","mAtf"),1))
 {
 	$text = antodAtta(0);
 	storedata('Pi-2','sa',0);
+}
+/* nakSatrANAmabviSayANAm (19) */
+elseif (ends($text,array("jyezWA","SravizWA","DanizWA","ASlezA","anurADA"),1))
+{
+	$text = AntodAtta(0);
+	storedata('Pi-19','sa',0);
+}
+/* AzAyA adigAkyA cet (18) */
+elseif ($_GET['phit']==='5.2')
+{
+	$text = antodAtta(0);
+	storedata('Pi-18','sa',0);
+}
+/* AzAyA adigAkyA cet (18) */
+elseif ($_GET['phit']==='5.1')
+{
+	$text = AdyudAtta(0);
+	storedata('Pi-18','sa',0);
 }
 /* strIviSayavarNAkSupUrvANAm (43) */
 elseif (arr($text,'/[AI]$/') || ends($text,array("SyenI","hariRI"),2) || ends($text,array("akzu"),1))
@@ -427,7 +483,7 @@ elseif (ends($text,$janapada,2))
 }
 /* gehArthAnAmastriyAm (3) */
 // enumeration of other members pending.
-elseif (ends($text,array("geha","gfha"),1))
+elseif (ends($text,array("geha","gfha"),1) && $gender!=='f')
 {
 	$text = antodAtta(0);
 	storedata('Pi-3','sa',0);
@@ -438,6 +494,18 @@ elseif (ends($text,array("SAlA"),1))
 {
 	$text = AdyudAtta(0);
 	storedata('Pi-3','sa',0);
+}
+/* zuklagaurayorAdiH (13) */
+elseif (ends($text,array("Sukla","gOra"),1))
+{
+	$text = AdyantodAttavA(0);
+	storedata('Pi-13','sa',0);
+}
+/* baMhizWavatsaratiSatTAntAnAm (7) */
+elseif (ends($text,array("baMhizWa","vatsara","ti","Sat","Ta","TA"),1))
+{
+	$text = antodAtta(0);
+	storedata('Pi-7','sa',0);
 }
 /* laghAvante dvayozca bahvaSo guruH (42) */
 elseif (arr($text,$pattern1)||twolaghuoneguru())
@@ -538,6 +606,18 @@ elseif (ends($text,array("una","ruRa","f","van"),1))
 	$text = one(array("una","ruRa","f","van"),array("u^na","ru^Ra","f^","va^n"),0);
 	storedata('Pi-32','sa',0);
 }
+/* vA nAmadheyasya (12) */
+elseif ($_GET['phit']==='2.2')
+{
+	$text = AdyantodAttavA(0);
+	storedata('Pi-12','sa',0);
+}
+/* kRSNasyAmRgAkhyA cet (11) */
+elseif ( $_GET['phit']==='2.3' && $veda==='1')
+{
+	$text = antodAtta(0);
+	storedata('Pi-11','sa',0);
+}
 /* varNAnAM taNatinitAntAnAm (33) */
 elseif (ends($text,array("eta","Sveta","rohita","lohita","harita","SoRa","pfSni","Siti","pfzat","harit","kfzRa"),1))
 {
@@ -564,12 +644,6 @@ elseif (arr($text,'/[Dy][A]/'))
 	$text = antodAtta(0);
 	storedata('Pi-5','sa',0);
 }
-/* baMhizWavatsaratiSatTAntAnAm (7) */
-elseif (ends($text,array("baMhizWa","vatsara","ti","Sat","Ta","TA"),1))
-{
-	$text = antodAtta(0);
-	storedata('Pi-7','sa',0);
-}
 /* dakziRasya sADO (8) */
 elseif ($_GET['phit']==='1.1')
 {
@@ -588,72 +662,18 @@ elseif ($veda==="1" && ends($text,array("dakziRa"),1) )
 	$text = AdyantodAttavA(0);
 	storedata('Pi-10','sa',0);
 }
-/* kRSNasyAjmRgAkhyA cet (11) */
-elseif ($_GET['phit']==='2.3')
-{
-	$text = antodAtta(0);
-	storedata('Pi-11','sa',0);
-}
-/* vA nAmadheyasya (12) */
-elseif ($_GET['phit']==='2.2')
-{
-	$text = AdyantodAttavA(0);
-	storedata('Pi-12','sa',0);
-}
-/* zuklagaurayorAdiH (13) */
-elseif (ends($text,array("Sukla","gOra"),1))
-{
-	$text = AdyantodAttavA(0);
-	storedata('Pi-13','sa',0);
-}
-/* aGguSThodakabakavazAnAM chandasyantaH (14) */
-elseif (ends($text,array("aNguzWa","udaka","baka","vaSA"),1) && $veda==="1")
-{
-	$text = antodAtta(0);
-	storedata('Pi-14','sa',0);
-}
-/* aGguSThodakabakavazAnAM chandasyantaH (14) */
-elseif (ends($text,array("vaSA"),1) && $veda==="0")
-{
-	$text = AdyudAtta(0);
-	storedata('Pi-14','sa',0);
-}
 /* pRSThasya ca (15) */
 elseif (ends($text,array("pfzWa"),1) && $veda==="1")
 {
 	$text = antodAtta(0);
 	storedata('Pi-15','sa',0);
 }
-/* pRSThasya ca (15) */
+/* vA bhASAyAm (16) */
 // Pending to verify the implication.
 elseif (ends($text,array("pfzWa"),1) && $veda==="0")
 {
 	$text = AdyantodAttavA(0);
-	storedata('Pi-15','sa',0);
-}
-/* Aryasya svAmyAkhyA cet (17) */
-elseif ($_GET['phit']==='4.1')
-{
-	$text = antodAtta(0);
-	storedata('Pi-17','sa',0);
-}
-/* AzAyA adigAkyA cet (18) */
-elseif ($_GET['phit']==='5.2')
-{
-	$text = antodAtta(0);
-	storedata('Pi-18','sa',0);
-}
-/* AzAyA adigAkyA cet (18) */
-elseif ($_GET['phit']==='5.1')
-{
-	$text = AdyudAtta(0);
-	storedata('Pi-18','sa',0);
-}
-/* nakSatrANAmabviSayANAm (19) */
-elseif (ends($text,array("jyezWA","SravizWA","DanizWA","ASleSA","anurADA"),1))
-{
-	$text = AntodAtta(0);
-	storedata('Pi-19','sa',0);
+	storedata('Pi-16','sa',0);
 }
 /* na kupUrvasya kRttikAkhyA cet (20) */
 elseif (ends($text,array("kfttikA","AryikA","bahulikA"),1))

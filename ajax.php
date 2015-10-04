@@ -89,7 +89,7 @@ if(ends($arrWord,array("arjuna"),1))
 	$html .= '<input required type="radio" value="3.2" name="phit" > अन्य ';
 	$html .= '</div>';
 }
-if(ends($arrWord,array("Arya"),1))
+if(ends($arrWord,array("Arya","arya"),1))
 {		
 	$html .= '<div id="step11">';
 	$html .= '<input required type="radio" value="4.1" name="phit" > स्वाम्याख्या ';
