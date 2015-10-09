@@ -78,6 +78,14 @@ if ($_GET['phit']==='9.2')
 	$text = AdyudAtta(0);
 	storedata('Pi-35','sa',0);
 }
+/* nabviSayasyAnisantasya (26) */
+// See https://github.com/drdhaval2785/SanskritAccent/issues/31 for details.
+elseif (in_array($first,array("mA!sa","mAMsa")) && $gender==='n')
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyudAtta(0);
+	storedata('Pi-26','sa',0);
+}
 /* ardhasyAsamadyotane (36) */
 elseif ($_GET['phit']==='10.1')
 {
