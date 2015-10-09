@@ -3549,6 +3549,17 @@ function antyapUrvodAtta()
 	}
 	return $val;
 }
+function AdyantyapUrvodAtta()
+{
+	global $text;
+	foreach ($text as $value)
+	{
+		$val[] = preg_replace('/^([^aAiIuUfFxXeEoO]*)([aAiIuUfFxXeEoO])/','$1$2^',$value);
+		$val[] = preg_replace('/([aAiIuUfFxXeEoO])([^aAiIuUfFxXeEoO]*)([aAiIuUfFxXeEoO])$/','$1$2$3^',$value);
+		$val[] = preg_replace('/([aAiIuUfFxXeEoO])([^aAiIuUfFxXeEoO]*)([aAiIuUfFxXeEoO])$/','$1^$2$3',$value);
+	}
+	return $val;
+}
 function dvitIyodAtta($n)
 {
 	global $text;

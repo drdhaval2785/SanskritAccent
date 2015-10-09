@@ -172,6 +172,12 @@ elseif (ends($text,array("tilya","Sikya","matya","kArzmya","DAnya","kanyA","rAja
 	$text = one(array("tilya","Sikya","matya","kArzmya","DAnya","kanyA","rAjanya","manuzya"),array("tilya#","Sikya#","matya#","kArzmya#","DAnya#","kanyA#","rAjanya#","manuzya#"),0);
 	storedata('Pi-76','sa',0);
 }
+/* bilvatizyayoH svarito vA (23) */
+elseif (ends($text,array("bilva","tizya"),1))
+{
+	$text = antasvaritodAttavA(0);
+	storedata('Pi-23','sa',0);
+}
 /* bilvabhakSyavIryANi Chandasi (77) */
 elseif (ends($text,array("bilva","Bakzya","vIrya"),2) && $veda==="1" )
 {
@@ -308,6 +314,12 @@ elseif (arr($text,'/[K][aA]$/') && !arr($text,'/^[Sm]/'))
 	$text = antodAtta(0);
 	storedata('Pi-6','sa',0);
 }
+/* na kupUrvasya kRttikAkhyA cet (20) */
+elseif (ends($text,array("kfttikA","AryikA","bahulikA"),1))
+{
+	$text = AdyudAtta(0);
+	storedata('Pi-20','sa',0);
+}
 /* thAntasya nAlaghunI (63) */
 // Acc to SK.
 elseif (ends($text,array("sanATA","sanATa"),2) )
@@ -392,7 +404,7 @@ elseif (in_array(3,countac()) && ends($text,array("yuta","ani","aRi"),1) )
 	storedata('Pi-56','sa',0);
 }
 /* svAGgaziTAmadantAnAm (29) */
-elseif (ends($text,array("danta","pAda","hasta","keSa","ozWa","muKa","gudA","sarva","viSva","itara","tva","nema","sima","eka","etara"),2))
+elseif (ends($text,array("jaNGA","ozWa","danta","pAda","hasta","keSa","ozWa","muKa","gudA","sarva","viSva","itara","tva","nema","sima","eka","etara","uBa"),2))
 {
 	storedata('Pi-24','pa',0);
 	$text = AdyudAtta(0);
@@ -470,7 +482,7 @@ elseif (ends($text,array("SyAmAka","mAza","SyAmAkA","mAzA"),1))
 elseif (arr($text,'/['.pc('hy').']*['.pc('ac').'][l][a]$/'))
 {
 	storedata('Pi-24','pa',0);
-	$text = antyapUrvodAtta(); // svarasiddhAntacandrikA says that in case of more than one guru, all get optional udAttatva.
+	$text = AdyantyapUrvodAtta(); // svarasiddhAntacandrikA says that in case of more than one guru, all get optional udAttatva.
 	storedata('Pi-48','sa',0);
 }
 /* janapadazabdAnAmaSantAnAm (47) */
@@ -506,6 +518,26 @@ elseif (ends($text,array("baMhizWa","vatsara","ti","Sat","Ta","TA"),1))
 {
 	$text = antodAtta(0);
 	storedata('Pi-7','sa',0);
+}
+/* tRNadhAnyAnAM ca dvyaSAm (27) */
+elseif (ends($text,array("kASa","kuSa","kunda","mAza","tila","mudga","kASA","kuSA","kundA","mAzA","tilA","mudgA",),2))
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyudAtta(0);
+	storedata('Pi-27','sa',0);
+}
+/* jyeSThakaniSThayorvayasi (22) */
+elseif ($_GET['phit']==='6.1')
+{
+	$text = antodAtta(0);
+	storedata('Pi-22','sa',0);
+}
+/* ghRtAdInAM ca (21) */
+// List from phiTvRtti.
+elseif (ends($text,array("Gfta","rajata","Sveta","sapta","azwO","jAtarUpa","kASa"),1))
+{
+	$text = antodAtta(0);
+	storedata('Pi-21','sa',0);
 }
 /* laghAvante dvayozca bahvaSo guruH (42) */
 elseif (arr($text,$pattern1)||twolaghuoneguru())
@@ -565,13 +597,6 @@ elseif (arr($text,'/[iu]$/') && $gender==='f')
 	$text = AdyudAtta(0);
 	storedata('Pi-25','sa',0);
 }
-/* tRNadhAnyAnAM ca dvyaSAm (27) */
-elseif (ends($text,array("kASa","kuSa","kunda","mAza","tila","mudga","kASA","kuSA","kundA","mAzA","tilA","mudgA",),2))
-{
-	storedata('Pi-24','pa',0);
-	$text = AdyudAtta(0);
-	storedata('Pi-27','sa',0);
-}
 /* nraH saGkhyAyAH (28) */
 elseif (sub(array("paYcan","navan","daSan","catur","catuH","catuz","paYca","nava","daSa","catvAr"),blank(0),blank(0),0))
 {
@@ -580,7 +605,7 @@ elseif (sub(array("paYcan","navan","daSan","catur","catuH","catuz","paYca","nava
 	storedata('Pi-28','sa',0);
 }
 /* prANinAM kupUrvam (30) */
-elseif (arr($text,'/[aAiIuUfFxXeEoO][kKgGN][a]$/') && ends($text,array("Suka","vfka","kAka","koka","baka",),1))
+elseif (arr($text,'/[aAiIuUfFxXeEoO][kKgGN][a]$/') && ends($text,array("Suka","vfka","kAka","koka","baka","nakula"),1))
 {
 	storedata('Pi-24','pa',0);
 	$text = AdyudAtta(0);
@@ -674,31 +699,6 @@ elseif (ends($text,array("pfzWa"),1) && $veda==="0")
 {
 	$text = AdyantodAttavA(0);
 	storedata('Pi-16','sa',0);
-}
-/* na kupUrvasya kRttikAkhyA cet (20) */
-elseif (ends($text,array("kfttikA","AryikA","bahulikA"),1))
-{
-	$text = AdyudAtta(0);
-	storedata('Pi-20','sa',0);
-}
-/* ghRtAdInAM ca (21) */
-// List from phiTvRtti.
-elseif (ends($text,array("Gfta","rajata","Sveta","sapta","azwO","jAtarUpa"),1))
-{
-	$text = antodAtta(0);
-	storedata('Pi-21','sa',0);
-}
-/* jyeSThakaniSThayorvayasi (22) */
-elseif ($_GET['phit']==='6.1')
-{
-	$text = antodAtta(0);
-	storedata('Pi-22','sa',0);
-}
-/* bilvatizyayoH svarito vA (23) */
-elseif (ends($text,array("bilva","tizya"),1))
-{
-	$text = antasvaritodAttavA(0);
-	storedata('Pi-22','sa',0);
 }
 /* phiSo'nta udAttaH (1) */
 else
