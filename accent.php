@@ -308,20 +308,6 @@ elseif ($_GET['phit']==='4.1')
 	$text = antodAtta(0);
 	storedata('Pi-17','sa',0);
 }
-/* yAntasyAntyAtpUrvam (62) */
-elseif (ends($text,array("ya","yA"),1) )
-{
-	storedata('Pi-24','pa',0);
-	storedata('Pi-50','pa',0);
-	$text = antyAtpUrvodAtta(0);
-	storedata('Pi-62','sa',0);
-}
-/* khAntasyAzmAdeH (6) */
-elseif (arr($text,'/[K][aA]$/') && !arr($text,'/^[Sm]/'))
-{
-	$text = antodAtta(0);
-	storedata('Pi-6','sa',0);
-}
 /* na kupUrvasya kRttikAkhyA cet (20) */
 elseif (ends($text,array("kfttikA","AryikA","bahulikA"),1))
 {
@@ -373,6 +359,22 @@ elseif (in_array(3,countac()) && ends($text,array("lalAwa","rarAwa","jaGana","up
 	storedata('Pi-51','pa',0);
 	$text = dvitIyodAtta(0);
 	storedata('Pi-52','sa',0);
+}
+/* na vRkSaparvatavizeSavyAghrasiMhamahiSANAm (40) */
+// Check whether the interpretation is correct or not. It seems that 39,40 are not word specific. They are context dependent.
+elseif (ends($text,array("vfkza","tAla","meru","vyaGra","siMha","mahiza","plakza","nyagroDa","aSvatTa","himavAn","mandara","mahAgiri"),2))
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyudAtta(0);
+	storedata('Pi-40','sa',0);
+}
+/* lubantasyopameyopameyanAmadheyasya (39) */
+// Check whether the interpretation is correct or not.
+elseif (ends($text,array("caYcA","rOdra"),2))
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyudAtta(0);
+	storedata('Pi-39','sa',0);
 }
 /* mAdInAM ca (53) */
 elseif (in_array(3,countac()) && arr($text,'/^[m]/') )
@@ -442,19 +444,19 @@ elseif ($_GET['phit']==='5.1')
 	$text = AdyudAtta(0);
 	storedata('Pi-18','sa',0);
 }
-/* strIviSayavarNAkSupUrvANAm (43) */
-elseif (arr($text,'/[AI]$/') || ends($text,array("SyenI","hariRI"),2) || ends($text,array("akzu"),1))
+/* hrasvAntasya hrasvamanRttAcCIlye (34) */
+elseif ($_GET['phit']==='8.1')
 {
 	storedata('Pi-24','pa',0);
 	$text = AdyudAtta(0);
-	storedata('Pi-43','sa',0);
+	storedata('Pi-34','sa',0);
 }
-/* igantAnAM ca dvyaSAm (49) */
-elseif (arr($text,'/[iIuUfFx]$/') && dvyac())
+/* varNAnAM taNatinitAntAnAm (33) */
+elseif (ends($text,array("hariRa","eta","Sveta","rohita","lohita","harita","SoRa","pfSni","Siti","pfzat","harit","kfzRa","rohita"),1))
 {
 	storedata('Pi-24','pa',0);
-	$text = antyapUrvodAtta();
-	storedata('Pi-49','sa',0);
+	$text = AdyudAtta(0);
+	storedata('Pi-33','sa',0);
 }
 /* zakunInAM ca laghu pUrvam (44) */
 // The examples vary in phiTsUtra vRtti and laghusiddhAntakaumudI. Please have a look.
@@ -478,6 +480,14 @@ elseif ( ends($text,array("vasanta","kfkalAsa"),2) )
 	storedata('Pi-24','pa',0);
 	$text = antodAtta(0);
 	storedata('Pi-45','sa',0);
+}
+/* tRNadhAnyAnAM ca dvyaSAm (27) */
+// For mAza, see https://github.com/drdhaval2785/SanskritAccent/issues/51
+elseif (ends($text,array("kASa","kuSa","kunda","mAza","tila","mudga","kASA","kuSA","kundA","mAzA","tilA","mudgA",),2))
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyudAtta(0);
+	storedata('Pi-27','sa',0);
 }
 /* dhAnyAnAM ca vRddhakSAntAnAm (46) */
 elseif (ends($text,array("SyAmAka","mAza","SyAmAkA","mAzA"),1))
@@ -527,13 +537,6 @@ elseif (ends($text,array("baMhizWa","vatsara","ti","Sat","Ta","TA"),1))
 	$text = antodAtta(0);
 	storedata('Pi-7','sa',0);
 }
-/* tRNadhAnyAnAM ca dvyaSAm (27) */
-elseif (ends($text,array("kASa","kuSa","kunda","mAza","tila","mudga","kASA","kuSA","kundA","mAzA","tilA","mudgA",),2))
-{
-	storedata('Pi-24','pa',0);
-	$text = AdyudAtta(0);
-	storedata('Pi-27','sa',0);
-}
 /* jyeSThakaniSThayorvayasi (22) */
 elseif ($_GET['phit']==='6.1')
 {
@@ -547,13 +550,6 @@ elseif (ends($text,array("Gfta","rajata","Sveta","sapta","azwO","jAtarUpa","kASa
 	$text = antodAtta(0);
 	storedata('Pi-21','sa',0);
 }
-/* laghAvante dvayozca bahvaSo guruH (42) */
-elseif (arr($text,$pattern1)||twolaghuoneguru())
-{
-	storedata('Pi-24','pa',0);
-	$text = laghAvante(); // svarasiddhAntacandrikA says that in case of more than one guru, all get optional udAttatva.
-	storedata('Pi-42','sa',0);
-}
 /* pItadrvarthAnAm (37) */
 elseif (ends($text,array("pItadru","pItadAru","devadAru","BadradAru"),2)) // The list is taken from zAntanava's phiTsUtras 99999990290369 of DLI www.dli.gov.in. Also see 99999990293891 svarasiddhAntacandrikA of DLI.
 {
@@ -562,7 +558,7 @@ elseif (ends($text,array("pItadru","pItadAru","devadAru","BadradAru"),2)) // The
 	storedata('Pi-37','sa',0);
 }
 /* grAmAdInAM ca (38) */
-elseif (ends($text,array("grAma","soma","yAma","purUza","SUra","vfdDa",),2)) // AkRtigaNa.
+elseif (ends($text,array("grAma","soma","yAma","puruza","SUra","vfdDa",),2)) // AkRtigaNa.
 {
 	storedata('Pi-24','pa',0);
 	$text = AdyudAtta(0);
@@ -574,29 +570,6 @@ elseif (ends($text,array("ANga","sOhma"),2))
 	storedata('Pi-24','pa',0);
 	$text = AdyudAtta(0);
 	storedata('Pi-41','sa',0);
-}
-/* na vRkSaparvatavizeSavyAghrasiMhamahiSANAm (40) */
-// Check whether the interpretation is correct or not. It seems that 39,40 are not word specific. They are context dependent.
-elseif (ends($text,array("vfkza","tAla","meru","vyaGra","siMha","mahiza","plakza","nyagroDa","aSvatTa","himavAn","mandara","mahAgiri"),2))
-{
-	storedata('Pi-24','pa',0);
-	$text = AdyudAtta(0);
-	storedata('Pi-40','sa',0);
-}
-/* lubantasyopameyopameyanAmadheyasya (39) */
-// Check whether the interpretation is correct or not.
-elseif (ends($text,array("caYcA","rOdra"),2))
-{
-	storedata('Pi-24','pa',0);
-	$text = AdyudAtta(0);
-	storedata('Pi-39','sa',0);
-}
-/* hrasvAntasya hrasvamanRttAcCIlye (34) */
-elseif ($_GET['phit']==='8.1')
-{
-	storedata('Pi-24','pa',0);
-	$text = AdyudAtta(0);
-	storedata('Pi-34','sa',0);
 }
 /* hrasvAntasya strIvizayasya (25) */
 elseif (arr($text,'/[iu]$/') && $gender==='f')
@@ -639,6 +612,13 @@ elseif (ends($text,array("una","ruRa","f","van"),1))
 	$text = one(array("una","ruRa","f","van"),array("u^na","ru^Ra","f^","va^n"),0);
 	storedata('Pi-32','sa',0);
 }
+/* igantAnAM ca dvyaSAm (49) */
+elseif (arr($text,'/[iIuU]$/') && dvyac())
+{
+	storedata('Pi-24','pa',0);
+	$text = antyapUrvodAtta();
+	storedata('Pi-49','sa',0);
+}
 /* vA nAmadheyasya (12) */
 elseif ($_GET['phit']==='2.2')
 {
@@ -650,13 +630,6 @@ elseif ( $_GET['phit']==='2.3' && $veda==='1')
 {
 	$text = antodAtta(0);
 	storedata('Pi-11','sa',0);
-}
-/* varNAnAM taNatinitAntAnAm (33) */
-elseif (ends($text,array("eta","Sveta","rohita","lohita","harita","SoRa","pfSni","Siti","pfzat","harit","kfzRa"),1))
-{
-	storedata('Pi-24','pa',0);
-	$text = AdyudAtta(0);
-	storedata('Pi-33','sa',0);
 }
 /* nabviSayasyAnisantasya (26) */
 elseif (!arr($text,'/is$/') && $gender==='n')
@@ -707,6 +680,34 @@ elseif (ends($text,array("pfzWa"),1) && $veda==="0")
 {
 	$text = AdyantodAttavA(0);
 	storedata('Pi-16','sa',0);
+}
+/* laghAvante dvayozca bahvaSo guruH (42) */
+elseif (arr($text,$pattern1)||twolaghuoneguru())
+{
+	storedata('Pi-24','pa',0);
+	$text = laghAvante(); // svarasiddhAntacandrikA says that in case of more than one guru, all get optional udAttatva.
+	storedata('Pi-42','sa',0);
+}
+/* yAntasyAntyAtpUrvam (62) */
+elseif (ends($text,array("ya","yA"),1) )
+{
+	storedata('Pi-24','pa',0);
+	storedata('Pi-50','pa',0);
+	$text = antyAtpUrvodAtta(0);
+	storedata('Pi-62','sa',0);
+}
+/* khAntasyAzmAdeH (6) */
+elseif (arr($text,'/[K][aA]$/') && !arr($text,'/^[Sm]/'))
+{
+	$text = antodAtta(0);
+	storedata('Pi-6','sa',0);
+}
+/* strIviSayavarNAkSupUrvANAm (43) */
+elseif (arr($text,'/[AI]$/') || ends($text,array("SyenI","hariRI"),2) || ends($text,array("akzu"),1))
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyudAtta(0);
+	storedata('Pi-43','sa',0);
 }
 /* phiSo'nta udAttaH (1) */
 else
