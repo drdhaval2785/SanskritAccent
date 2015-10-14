@@ -13,6 +13,7 @@ $tran = $_POST['tran'];
 $lakAra= $_POST['lakAra'];
 $sanAdi = $_POST['sanAdi'];
 $us = $_POST['upasarga'];
+$gender = $_POST['gender'];
 
 // IAST and devanagari handling
 // Code for converting from IAST to SLP
@@ -59,11 +60,25 @@ if(ends($arrWord,array("akza"),2))
 	$html .= '<input required type="radio" value="9.2" name="phit" > अदेवने ';
 	$html .= '</div>';
 }
-if(arr($arrWord,'/^([^aAiIuUfFxXeEoO]*)[aiu]/') && arr($arrWord,'/[aiufx]([^aAiIuUfFxXeEoO]*)$/') )
+if(ends($arrWord,array("Sukla","gOra","SuklA","gOrI"),2))
+{		
+	$html .= '<div id="step11">';
+	$html .= '<input required type="radio" value="13.1" name="phit" > नामवाचि ';
+	$html .= '<input required type="radio" value="13.2" name="phit" checked> अन्य ';
+	$html .= '</div>';
+}
+elseif(arr($arrWord,'/^([^aAiIuUfFxXeEoO]*)[aiu]/') && arr($arrWord,'/[aiufx]([^aAiIuUfFxXeEoO])$/') )
 {		
 	$html .= '<div id="step11">';
 	$html .= '<input required type="radio" value="8.1" name="phit" > ताच्छील्ये ';
 	$html .= '<input required type="radio" value="8.2" name="phit" checked> अन्य ';
+	$html .= '</div>';
+}
+if(arr($arrWord,'/[uU][KPCWTcwtkp]/') )
+{		
+	$html .= '<div id="step11">';
+	$html .= '<input required type="radio" value="7.1" name="phit" > कृत्रिमाख्या ';
+	$html .= '<input required type="radio" value="7.2" name="phit" > अन्य ';
 	$html .= '</div>';
 }
 if(ends($arrWord,array("dakziRa"),1))
@@ -110,18 +125,25 @@ if(ends($arrWord,array("jyezWa","kanizWa"),1))
 	$html .= '<input required type="radio" value="6.2" name="phit" > अन्य ';
 	$html .= '</div>';
 }
-if(arr($arrWord,'/[uU][KPCWTcwtkp]/') )
-{		
-	$html .= '<div id="step11">';
-	$html .= '<input required type="radio" value="7.1" name="phit" > कृत्रिमाख्या ';
-	$html .= '<input required type="radio" value="7.2" name="phit" > अन्य ';
-	$html .= '</div>';
-}
 if(ends($arrWord,array("arDa"),1) )
 {		
 	$html .= '<div id="step11">';
 	$html .= '<input required type="radio" value="10.1" name="phit" > असमद्योतने ';
 	$html .= '<input required type="radio" value="10.2" name="phit" > समद्योतने ';
+	$html .= '</div>';
+}
+if(ends($arrWord,array("DA","yA"),1) && $gender==="f")
+{		
+	$html .= '<div id="step11">';
+	$html .= '<input required type="radio" value="11.1" name="phit" > नित्यस्त्रीलिङ्ग ';
+	$html .= '<input required type="radio" value="11.2" name="phit" checked> अन्य ';
+	$html .= '</div>';
+}
+elseif(ends($arrWord,array("A","I"),1) && $gender==="f" )
+{		
+	$html .= '<div id="step11">';
+	$html .= '<input required type="radio" value="12.1" name="phit" > नित्यस्त्रीलिङ्ग ';
+	$html .= '<input required type="radio" value="12.2" name="phit" checked> अन्य ';
 	$html .= '</div>';
 }
 	
