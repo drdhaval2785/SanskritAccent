@@ -4,7 +4,7 @@
  /* This code is developed by Dr. Dhaval Patel (drdhaval2785@gmail.com) of www.sanskritworld.in and Ms. Sivakumari Katuri.
   * Layout assistance by Mr Marcis Gasuns.
   * Available under GNU licence.
-  * Version 1.0.0 date 4 October 2015
+  * Version 1.0.1 date 15 October 2015
   * The latest source code is available at https://github.com/drdhaval2785/SanskritAccent
   * The bugs are reported and dealt with at https://github.com/drdhaval2785/SanskritAccent/issues
   * Acknowledgements: I extend my heartfelt thanks to Ananda Loponen for the code to convert devanagari and various sanskrit transliterations. That can be accessed at http://www.ingmardeboer.nl/php/diCrunch.php?act=help.
@@ -51,17 +51,17 @@ $us = "";
 
 /* Reading from the HTML input. */
 $first = toslp($_GET["first"]); // to change the word input in devanagari / IAST to slp.
-$frontend = $_GET["frontend"];
-$veda = $_GET["veda"];
-$gender = $_GET["gender"];
-global $storedata;
+$frontend = $_GET["frontend"]; // Whether to display the sUtras or just the final product.
+$veda = $_GET["veda"]; // Whether the word is Vedic or laukika.
+$gender = $_GET["gender"]; // 'm' for musculine, 'f' for feminine, 'n' for neuter.
+global $storedata; // Initialising variable $storedata.
+$text = array($first); // Created a variable $text which is an array with only one member $first
 
 echo $header;
 echo '<p class="red">Input word is - '.convert($first).'</p>';
-/* Displaying the udAtta, anudAtta, svarita mArks. */
+/* Displaying the notice for udAtta, anudAtta, svarita mArks. */
 echo '<p class="hn">Please note - We have used ॑ to denote udAtta,  ॒ to denote anudAtta and  ᳠ to denote svarita</p>';
 echo '<hr>';
-$text = array($first);
 $storedata=array();
 
 // Numbers refer to that of SK with Sri Balamanorama 1911 edition.
@@ -72,23 +72,23 @@ $storedata=array();
 /* tryacAM prAGmakarAt (51) */
 // This is adhikArasUtra. It is implicitly coded in each code fragment from 52 to 56.
 /* akSasyAdevanasya (35) */
-if ($_GET['phit']==='9.2')
+if ($_GET['phit']==='9.2') // This $_GET['phit'] gets the variable 'phit' passed from accent.html to the present script. As these are specific user feedbacks, they are given precedence in execution. For descriptions, see https://github.com/drdhaval2785/SanskritAccent/blob/master/ajax%20requirement.docx
 {
-	storedata('Pi-24','pa',0);
-	$text = AdyudAtta(0);
-	storedata('Pi-35','sa',0);
+	storedata('Pi-24','pa',0); // storedata has three variables - 'Pi-24' denotes that it is phiTsUtra no 24. 'pa' denotes that it is paribhASA sUtra. 0 denotes that there is no note to be displayed.
+	$text = AdyudAtta(0); // This function assigns AdyudAtta accent to all members of array $text. 0 denotes that the application of this rule is mandatory (as compared to 1 for optional application)
+	storedata('Pi-35','sa',0); // Here 'sa' implies that this is a vidhisUtra.
 }
 /* ardhasyAsamadyotane (36) */
 elseif ($_GET['phit']==='10.1')
 {
-	storedata('Pi-24','pa',0);
+	storedata('Pi-24','pa',0); // For number of phiTsUtras, see $phiTdata in function.php
 	$text = AdyudAtta(0);
 	storedata('Pi-36','sa',0);
 }
 /* Aryasya svAmyAkhyA cet (17) */
 elseif ($_GET['phit']==='4.1')
 {
-	$text = antodAtta(0);
+	$text = antodAtta(0); // This function assigns antodAtta accent.
 	storedata('Pi-17','sa',0);
 }
 /* AzAyA adigAkyA cet (18) */
@@ -114,7 +114,7 @@ elseif ($_GET['phit']==='8.1')
 elseif ($_GET['phit']==='7.1')
 {
 	storedata('Pi-24','pa',0);
-	$text = preg_accent('/([uU])([KPCWTcwtkp])/','$1^$2',0);
+	$text = preg_accent('/([uU])([KPCWTcwtkp])/','$1^$2',0); // This function replaces accent on basis of a regular expression. See function.php
 	storedata('Pi-31','sa',0);
 }
 /* arjunasya tRNAkhyA cet (16) */
@@ -126,7 +126,7 @@ elseif ($_GET['phit']==='3.1')
 /* vA nAmadheyasya (12) */
 elseif ($_GET['phit']==='2.2')
 {
-	$text = AdyantodAttavA(0);
+	$text = AdyantodAttavA(0); // Optional AdyudAtta and antodAtta.
 	storedata('Pi-12','sa',0);
 }
 /* kRSNasyAmRgAkhyA cet (11) */
@@ -162,11 +162,11 @@ elseif (in_array($first,array("mA!sa","mAMsa")) && $gender==='n')
 	storedata('Pi-26','sa',0);
 }
 /* Chandasi ca (58) */
-elseif ($veda==='1' && ends($text,array("nAsikA"),2) )
+elseif ($veda==='1' && ends($text,array("nAsikA","kuRapa"),2) )
 {
 	storedata('Pi-24','pa',0);
 	storedata('Pi-50','pa',0);
-	$text = AdidvitIyodAtta(0);
+	$text = AdidvitIyodAtta(0); // Optional first and second udAtta.
 	storedata('Pi-58','sa',0);
 }
 /* aGguSThodakabakavazAnAM chandasyantaH (14) */
@@ -257,7 +257,7 @@ elseif (ends($text,array("bilva","Bakzya","vIrya"),2) && $veda==="1" )
 /* bilvatizyayoH svarito vA (23) */
 elseif (ends($text,array("bilva","tizya"),1))
 {
-	$text = antasvaritodAttavA(0);
+	$text = antasvaritodAttavA(0); // Optional antasvarita and antodAtta accents.
 	storedata('Pi-23','sa',0);
 }
 /* tvattvasamasimetyanuccAni (78) */
@@ -305,14 +305,14 @@ elseif (ends($text,array("pawupawu","yaTAyaTa","yaTAyaTAm"),2) )
 /* zeSaM sarvamanudAttam (87) */
 elseif (ends($text,array("praprAyam","praprAya","divedive"),2) )
 {
-	$text = AdyanudAtta(0);
+	$text = AdyanudAtta(0); // AdyanudAtta accent.
 	storedata('Pi-87','sa',0);
 }
 /* vAvAdInAmubhAvudAttau (83) */
 // Meaning not clear
 elseif ( ends($text,array("vAvat","vAvad","vAva"),2) )
 {
-	$text = AdyantodAttavA(0);
+	$text = AdyantodAttavA(0); // Optional AdyudAtta and AdyanudAtta accents.
 	storedata('Pi-83','sa',0);
 }
 /* cAdayo'nudAttAH (84) */
@@ -344,7 +344,7 @@ elseif (ends($text,array("sANkASya","kAmpilya","nAsikya","dArvAGAwa"),2) )
 {
 	storedata('Pi-24','pa',0);
 	storedata('Pi-50','pa',0);
-	$text = antyAtpUrvodAtta(1);
+	$text = antyAtpUrvodAtta(1); // Optional antyAtpUrvodAtta accent. The unaccented form is mutated by code below.
 	$text = one(array("sANkASya","kAmpilya","nAsikya","dArvAGAwa"),array("sA^NkASya","kA^mpilya","nA^sikya","dArvA^GAwa"),0);
 	$text = one(array("dArvA^GAwa"),array("dArvAGAwa^"),1);
 	storedata('Pi-65','sa',0);
@@ -452,7 +452,7 @@ elseif (in_array(3,countac()) && arr($text,'/^[m]/') )
 	storedata('Pi-24','pa',0);
 	storedata('Pi-50','pa',0);
 	storedata('Pi-51','pa',0);
-	$text = dvitIyodAtta(0);
+	$text = dvitIyodAtta(0); // dvitIyodAtta accent.
 	storedata('Pi-53','sa',0);
 }
 /* zAdInAM zAkAnAm (54) */
@@ -491,7 +491,7 @@ elseif (ends($text,array("Gfta","rajata","Sveta","sapta","azwO","jAtarUpa","uBa"
 	storedata('Pi-21','sa',0);
 }
 /* svAGgaziTAmadantAnAm (29) */
-elseif (ends($text,array("vadana","kapola","rasanA","jaNGA","ozWa","danta","pAda","hasta","keSa","ozWa","muKa","gudA","sarva","viSva","itara","tva","nema","sima","eka","etara","uBa","SiKA"),2))
+elseif (ends($text,array("vadana","kapola","rasanA","jaNGA","ozWa","danta","pAda","hasta","keSa","ozWa","muKa","gudA","sarva","viSva","itara","tva","nema","sima","eka","etara","uBa","SiKA","guda"),2))
 {
 	storedata('Pi-24','pa',0);
 	$text = AdyudAtta(0);
@@ -529,7 +529,7 @@ elseif ( ends($text,array("kukkuwa","tittiri"),2) )
 elseif ( ends($text,array("kfkavAku","kapota"),2) )
 {
 	storedata('Pi-24','pa',0);
-	$text = laghAvante();
+	$text = laghAvante(); // Accent according to laghAvante .... sUtra.
 	storedata('Pi-44','sa',0);
 }
 /* nartuprANyAkyAyAm (45) */
@@ -653,7 +653,7 @@ elseif (arr($text,'/[iIuU]$/') && dvyac())
 	storedata('Pi-49','sa',0);
 }
 /* gudasya ca (4) */
-elseif (ends($text,array("guda"),1))
+elseif (ends($text,array("guda"),1) && $gender!=="f")
 {
 	$text = antodAtta(0);
 	storedata('Pi-4','sa',0);
