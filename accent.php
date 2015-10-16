@@ -216,9 +216,9 @@ elseif (ends($text,array("pArAvata"),2) )
 /* dhUmrajAnumuJjakezakAlavAlasTAlIpAkAnAmadhUjalasthAnAm (72) */
 elseif (ends($text,array("DUmrajAnu","muYjakeSa","kAlavAla","sTAlIpAka"),2) )
 {
-	$text = one(array("DUmrajAnu","muYjakeSa","kAlavAla"."sTAlIpAka"),array("DUmra^jAnu","mu^YjakeSa","kA^lavAla"."sTAlI^pAka"),1);
-	$text = one(array("DUmrajAnu","muYjakeSa","kAlavAla"."sTAlIpAka"),array("DUmrajA^nu","muYjake^Sa","kAlavA^la"."sTAlIpA^ka"),1);
-	$text = one(array("DUmrajAnu","muYjakeSa","kAlavAla"."sTAlIpAka"),array("DUmrajAnu^","muYjakeSa^","kAlavAla^"."sTAlIpAka^"),0);
+	$text = one(array("DUmrajAnu","muYjakeSa","kAlavAla","sTAlIpAka"),array("DUmra^jAnu","mu^YjakeSa","kA^lavAla","sTAlI^pAka"),1);
+	$text = one(array("DUmrajAnu","muYjakeSa","kAlavAla","sTAlIpAka"),array("DUmrajA^nu","muYjake^Sa","kAlavA^la","sTAlIpA^ka"),1);
+	$text = one(array("DUmrajAnu","muYjakeSa","kAlavAla","sTAlIpAka"),array("DUmrajAnu^","muYjakeSa^","kAlavAla^","sTAlIpAka^"),0);
 	storedata('Pi-72','sa',0);
 }
 /* kapikezaharikezayozChandasi (73) */

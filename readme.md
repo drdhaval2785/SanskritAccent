@@ -1,9 +1,3 @@
-# Crowdfund the project
-
-We are planning to crowdfund this project.
-
-Visit https://www.indiegogo.com/projects/sanskrit-accents#/story for details.
-
 # Goal
 
 To create an open source PHP code to simulate phiTsUtras of Sanskrit grammar.
@@ -27,4 +21,3 @@ Input your query on http://www.sanskritworld.in/sanskrittool/SanskritAccent/acce
 # Contribute
 
 1. You can contribute by testing and reporting bugs [here](https://github.com/drdhaval2785/SanskritAccent/issues).
-2. We would love if you can support us through [donations](https://www.indiegogo.com/projects/sanskrit-accents#/story). 
