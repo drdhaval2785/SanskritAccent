@@ -146,6 +146,13 @@ elseif(ends($arrWord,array("A","I"),1) && $gender==="f" )
 	$html .= '<input required type="radio" value="12.2" name="phit" checked> अन्य ';
 	$html .= '</div>';
 }
+elseif(ends($arrWord,array("i","u"),1) && $gender==="f" )
+{		
+	$html .= '<div id="step11">';
+	$html .= '<input required type="radio" value="14.1" name="phit" > नित्यस्त्रीलिङ्ग ';
+	$html .= '<input required type="radio" value="14.2" name="phit" checked> अन्य ';
+	$html .= '</div>';
+}
 	
 
 

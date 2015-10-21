@@ -484,8 +484,10 @@ elseif (in_array(3,countac()) && ends($text,array("yuta","ani","aRi"),1) )
 	storedata('Pi-56','sa',0);
 }
 /* ghRtAdInAM ca (21) */
-// List from phiTvRtti.
-elseif (ends($text,array("Gfta","rajata","Sveta","sapta","azwO","jAtarUpa","uBa"),1))
+// List from phiTvRtti - "Gfta","rajata","Sveta","sapta","azwO","jAtarUpa","uBa"
+// List from laghuzabdenduzekhara - "varAha"
+// List from svarasiddhAntacandrikA - "aSvakratu"
+elseif (ends($text,array("Gfta","rajata","Sveta","sapta","azwO","jAtarUpa","uBa","varAha","aSvakratu"),1))
 {
 	$text = antodAtta(0);
 	storedata('Pi-21','sa',0);
@@ -563,7 +565,7 @@ elseif (arr($text,'/['.pc('hy').']*['.pc('ac').'][l][a]$/'))
 }
 /* janapadazabdAnAmaSantAnAm (47) */
 // aSantAnAm / aSAntAnAm seems to be an issue in grammar texts.
-elseif (ends($text,$janapada,2))
+elseif (ends($text,$ajantajanapada,2))
 {
 	storedata('Pi-24','pa',0);
 	$text = AdyudAtta(0); // svarasiddhAntacandrikA says that in case of more than one guru, all get optional udAttatva.
