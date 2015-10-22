@@ -589,6 +589,13 @@ if (ends($text,array("Sukla","gOra"),1))
 	$text = AdyantodAttavA(1);
 	storedata('Pi-13','sa',0);
 }
+/* hrasvAntasya strIvizayasya (25) */
+if (arr($text,'/[iu]$/') && $gender==='f' && $_GET['phit']==="14.1")
+{
+	storedata('Pi-24','pa',0);
+	$text = AdyudAtta(1);
+	storedata('Pi-25','sa',0);
+}
 /* baMhizWavatsaratiSatTAntAnAm (7) */
 if (ends($text,array("baMhizWa","vatsara","ti","Sat","Ta","TA"),1))
 {
@@ -615,13 +622,6 @@ if (ends($text,array("ANga","sOhma"),2))
 	storedata('Pi-24','pa',0);
 	$text = AdyudAtta(1);
 	storedata('Pi-41','sa',0);
-}
-/* hrasvAntasya strIvizayasya (25) */
-if (arr($text,'/[iu]$/') && $gender==='f')
-{
-	storedata('Pi-24','pa',0);
-	$text = AdyudAtta(1);
-	storedata('Pi-25','sa',0);
 }
 /* nraH saGkhyAyAH (28) */
 if (ends($text,array("paYcan","navan","daSan","catur","catuH","catuz","paYca","nava","daSa","catvAr"),1))
