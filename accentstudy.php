@@ -159,7 +159,7 @@ if (in_array($first,array("mA!sa","mAMsa")) && $gender==='n')
 {
 	storedata('Pi-24','pa',0);
 	$text = antodAtta(1);
-	storedata('Pi-26','sa',0);
+	storedata('Pi-26-1','sa',0);
 }
 /* Chandasi ca (58) */
 if ($veda==='1' && ends($text,array("nAsikA"),2) )
@@ -485,7 +485,7 @@ if (in_array(3,countac()) && ends($text,array("yuta","ani","aRi"),1) )
 }
 /* ghRtAdInAM ca (21) */
 // List from phiTvRtti.
-if (ends($text,array("Gfta","rajata","Sveta","sapta","azwO","jAtarUpa","uBa"),1))
+if (ends($text,array("Gfta","rajata","Sveta","sapta","azwO","jAtarUpa","uBa","saptan","azwan"),1))
 {
 	$text = antodAtta(1);
 	storedata('Pi-21','sa',0);
@@ -624,7 +624,7 @@ if (ends($text,array("ANga","sOhma"),2))
 	storedata('Pi-41','sa',0);
 }
 /* nraH saGkhyAyAH (28) */
-if (ends($text,array("paYcan","navan","daSan","catur","catuH","catuz","paYca","nava","daSa","catvAr"),1))
+if (sub(array("paYcan","navan","daSan","catur","catuH","catuz","paYca","nava","daSa","catvAr"),blank(0),blank(0),0))
 {
 	storedata('Pi-24','pa',0);
 	$text = AdyudAtta(1);

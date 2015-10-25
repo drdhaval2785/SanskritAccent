@@ -159,7 +159,7 @@ elseif (in_array($first,array("mA!sa","mAMsa")) && $gender==='n')
 {
 	storedata('Pi-24','pa',0);
 	$text = antodAtta(0);
-	storedata('Pi-26','sa',0);
+	storedata('Pi-26-1','sa',0);
 }
 /* Chandasi ca (58) */
 elseif ($veda==='1' && ends($text,array("nAsikA","kuRapa"),2) )
@@ -487,7 +487,8 @@ elseif (in_array(3,countac()) && ends($text,array("yuta","ani","aRi"),1) )
 // List from phiTvRtti - "Gfta","rajata","Sveta","sapta","azwO","jAtarUpa","uBa"
 // List from laghuzabdenduzekhara - "varAha"
 // List from svarasiddhAntacandrikA - "aSvakratu"
-elseif (ends($text,array("Gfta","rajata","Sveta","sapta","azwO","jAtarUpa","uBa","varAha","aSvakratu"),1))
+// List from haradatta - "mudga","anya","vrIhi". See https://github.com/drdhaval2785/SanskritAccent/issues/33
+elseif (ends($text,array("Gfta","rajata","Sveta","sapta","azwO","jAtarUpa","uBa","varAha","aSvakratu","saptan","azwan","mudga","vrIhi","anya"),1))
 {
 	$text = antodAtta(0);
 	storedata('Pi-21','sa',0);
