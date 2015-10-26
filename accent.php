@@ -7,7 +7,8 @@
   * Version 1.0.1 date 15 October 2015
   * The latest source code is available at https://github.com/drdhaval2785/SanskritAccent
   * The bugs are reported and dealt with at https://github.com/drdhaval2785/SanskritAccent/issues
-  * Acknowledgements: I extend my heartfelt thanks to Ananda Loponen for the code to convert devanagari and various sanskrit transliterations. That can be accessed at http://www.ingmardeboer.nl/php/diCrunch.php?act=help.
+  * Acknowledgements: The base books for this work are (1) zAntanava's phiTsUtras with phiDvRtti edited by F. Kielhorn, (2) Siddhantakaumudi with Subodhini commentary and (3) svarasiddhAntacandrikA of Srinivasyajvan, published as AnnamalaivishvavidyAlayasaMskRtagranthAvaliH - 4.
+  * I extend my heartfelt thanks to Ananda Loponen for the code to convert devanagari and various sanskrit transliterations. That can be accessed at http://www.ingmardeboer.nl/php/diCrunch.php?act=help.
   * I also extend my gratitude to gloomy.penguin of stackoverflow.com, who helped me create dvitva and lopa functions, without which I would be handicapped.
   * For setup, copy and paste accent.php, accent.html, script.js, ajax.php, function.php, mystyle.css, slp-dev.php and dev-slp.php to your localhost or server and run subanta.html from browser.
   * accent.html is the frontend for the code.
