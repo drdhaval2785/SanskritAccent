@@ -1,7 +1,6 @@
 <?php
-/* Trying for accents */
 /* _ for anudAtta, ^ for udAtta, # for svarita inside the machine process. */
- /* This code is developed by Dr. Dhaval Patel (drdhaval2785@gmail.com) of www.sanskritworld.in and Ms. Sivakumari Katuri.
+ /* This code is developed by Dr. Dhaval Patel (drdhaval2785@gmail.com) of www.sanskritworld.in and Dr. Sivakumari Katuri.
   * Layout assistance by Mr Marcis Gasuns.
   * Available under GNU licence.
   * Version 1.0.0 date 4 October 2015
@@ -631,7 +630,7 @@ if (sub(array("paYcan","navan","daSan","catur","catuH","catuz","paYca","nava","d
 	storedata('Pi-28','sa',0);
 }
 /* prANinAM kupUrvam (30) */
-if (arr($text,'/[aAiIuUfFxXeEoO][kKgGN][a]$/') && ends($text,array("Suka","vfka","kAka","koka","baka","nakula"),1))
+if (arr($text,'/[aAiIuUfFxXeEoO][kKgGN][aA]$/') && ends($text,array("Suka","vfka","kAka","koka","baka","nakula","cawaka","cawakA"),1))
 {
 	storedata('Pi-24','pa',0);
 	$text = AdyudAtta(1);
